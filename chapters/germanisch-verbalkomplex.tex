@@ -1,0 +1,534 @@
+%% -*- coding:utf-8 -*-
+
+\chapter{Der Verbalkomplex}
+\label{chap-verbal-complex}
+
+
+\section{Das Phänomen}
+
+SOV"=Sprachen\is{Verbalkomplex|(} wie das \ili{Niederländisch} und das \ili{Deutsch} bilden Verbalkomplexe, das heißt
+Kombinationen von Verben unter Ausschluss der nicht"=verbalen Argumente der Verben. So nimmt man zum
+Beispiel an, dass \emph{zu lesen}, \emph{versprochen} und \emph{hat} in Haiders Beispiel (\citeyear[\page
+  110]{Haider86c}; \citeyear[\page 128]{Haider90b}) in (\mex{1}) unter Ausschluss der Argumente der Verben
+\emph{es}, \emph{ihr} und \emph{jemand} eine Konstituente bilden.
+\ea\label{ex-weil-es-ihr-jemand-zu-lesen-versprochen-hat}
+weil es ihr jemand zu lesen versprochen hat
+\z
+Es gibt mehrere Indikatoren für die Bildung von Verbalkomplexen,
+die von Gunnar \citet{Bech55a} im Detail herausgearbeitet wurden. Wie oben angedeutet, besteht eine Möglichkeit, solche
+Verbalkomplexe zu analysieren, darin anzunehmen, dass die Verben in einem Satz eine Einheit bilden, die sich im Wesentlichen wie ein
+einzelnes Verb verhält. Das erklärt zum Beispiel, warum die Argumente der drei Verben in (\mex{0}) gescrambelt werden können:
+\emph{es} hängt von \emph{zu lesen} ab, \emph{ihr} hängt von \emph{versprochen}
+ab und \emph{jemand} ist das Subjekt und kongruiert mit dem finiten Verb \emph{hat}
+(normalerweise wird es auch als ein Abhängiges des Auxiliars \emph{hat} behandelt).
+
+Es sei angemerkt, dass es in den \ili{deutsch}en Dialekten extreme Variation gibt, was die Serialisierung
+der Elemente im Verbalkomplex betrifft. Das regierende\footnote{
+  Der Begriff \emph{regieren}\is{Rektion} wird gleichbedeutend mit \emph{selegieren} verwendet. Wenn ein Verb ein Akkusativ"=
+  objekt verlangt, sagt man, dass es den Akkusativ/ein Akkusativobjekt regiert. Verben können auch andere Verben regieren
+  und bestimmen, welche Form das regierte Verb annehmen muss, \zb Perfekt-/Passivpartizip, Infinitiv
+  mit oder ohne \emph{zu}.
+} Verb wird im Standard\-\ili{deutsch}en rechts vom
+eingebetteten Verb realisiert: V$_3$ V$_2$ V$_1$ wie in (\mex{0}), aber es gibt Beispiele wie
+(\mex{1}) aus \citew[376]{Mueller99a}.\footnote{
+Interviewpartner in: \emph{Insekten und andere Nachbarn -- ein Haus in Berlin}, ARD 1995-11-15.
+}
+\eal
+\ex
+Ich hätte stapelweise Akten kön\-nen haben.\hfill (\ili{deutsch}er Berliner Dialekt)
+\ex
+weil ich mir das  nich hab' lassen gefallen
+\ex
+wenn se   mir hier würden rausschmeißen, \ldots
+\zl
+Die Abfolgen in (\mex{0}) entsprechen der Abfolge, die im \ili{Niederländisch}en am natürlichsten ist. (\mex{1}) zeigt einige
+\ili{niederländisch}e Beispiele:
+\eal
+\ex
+\gll dat   Kim het boek wil lezen\\
+     dass  Kim das Buch will lesen\\
+\glt `dass Kim das Buch lesen will'
+\ex
+\gll dat  Kim Sandy het boek laat lezen\\
+     dass Kim Sandy das Buch lässt lesen\\
+\glt `dass Kim Sandy das Buch lesen lässt'
+\ex
+\gll dat Kim Sandy het boek wil laten lezen\\
+     dass Kim Sandy das Buch will lassen lesen\\
+\glt `dass Kim Sandy das Buch lesen lassen will'
+\zl
+
+SVO"=Sprachen wie das \ili{Dänisch} und das \ili{Englisch} erlauben es nicht, dass die Argumente eingebetteter Verben
+mit Argumenten höherer Verben gescrambelt werden. Alle Argumente bleiben in ihrer VP (natürlich modulo Extraktion).
+
+
+\section{Die Analyse}
+
+
+Die Technik, die zur Analyse der Verbalkomplexe verwendet wird, heißt \emph{\isi{Argumentattraktion}} oder
+\emph{Argumentkomposition} und wurde von \citet{Geach70a} im Rahmen der Kategorialgrammatik
+entwickelt und von \citet{HN94a} für die HPSG adaptiert. Die Analyse von \emph{lesen wird}, wie es in
+(\mex{1}) vorkommt, ist in Abbildung~\vref{fig-lesen-wird} dargestellt.
+\ea
+dass keiner das Buch lesen wird
+\z
+\begin{figure}
+\begin{forest}
+sm edges
+[V\feattab{
+%              \vform \type{fin},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}] } } 
+        [V\feattab{
+%              \vform \type{bse},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}]} }, name=lesen [lesen;read] ]
+        [V\feattab{
+%              \vform \type{fin},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}], V }}, name=wird [wird;will] ]
+]
+\draw[semithick,->] (lesen)..controls +(south east:2) and +(south west:2)..(wird);
+\end{forest}
+\caption{\label{fig-lesen-wird}Analyse der Verbalkomplexbildung von \emph{lesen wird}
+  mittels Argumentkomposition (vorläufige Version)}
+\end{figure}
+\emph{wird} selegiert einen Infinitiv ohne \emph{zu} und zusätzlich dessen Argumente. Dieser
+Infinitiv (\emph{lesen}) wird mit dem Verb kombiniert und ist daher nicht in der Valenzliste
+des Mutterknotens enthalten.
+
+Um auf unsere Einkaufsanalogie von S.\,\pageref{page-shopping-analogy} zurückzukommen: Die Verbalkomplexbildung
+kann man sich vorstellen, indem man sich ein junges und hilfsbereites Hilfsverb vorstellt, das einer Person aus
+einer Risikogruppe mitten in einer Pandemie aushilft. Da Risikopersonen nicht einkaufen gehen
+sollen, übernimmt die hilfsbereite Person deren Einkaufsliste und erledigt den Einkauf für sie. Im
+Fall von Hilfsverben selegiert das Hilfsverb einfach das Hauptverb und
+verlangt keine weiteren Argumente außer denen, die vom eingebetteten Verb übernommen werden. Das heißt, das
+Hilfsverb erledigt einfach den Einkauf für das Hauptverb. Ein sehr altruistisches Verb ist es. Später werden wir
+uns Verben wie \emph{versuchen} und \emph{lassen} anschauen, die zusätzlich zu denen des eingebetteten Verbs eigene Argumente
+verlangen. Das ist parallel zu einem Einkaufsereignis, bei dem die helfende Person
+zusätzlich zum Einkauf für jemand anderen ihre eigenen Waren kauft.
+
+%Now, back to linguistics and to some details of the analysis:
+Die Kombination von \emph{lesen} und \emph{wird} verhält sich wie ein einzelnes Verb, indem sie
+in beliebiger Reihenfolge mit ihren Argumenten kombiniert werden kann. Abbildung~\ref{fig-vc-nom-acc} zeigt die Analyse von (\mex{1}a) und
+Abbildung~\ref{fig-vc-acc-nom} zeigt die Analyse von (\mex{1}b).
+\eal
+\ex\label{ex-dass-keiner-das-buch-lesen-wird}
+{[}dass{]} keiner das Buch lesen wird
+\ex
+{[}dass{]} das Buch keiner lesen wird
+\zl
+
+\begin{figure}
+\centerfit{
+\begin{forest}
+sm edges
+[V\feattab{
+              \sliste{ }}
+        [{NP[\type{nom}]} [keiner;nobody] ]
+        [V\feattab{
+              \sliste{ NP[\type{nom}] }}, s sep+=1em
+          [{NP[\type{acc}]} [das Buch;the book, roof] ]
+          [V\feattab{
+%              \vform \type{fin},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}]}}
+             [V\feattab{
+%              \vform \type{bse},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen;read] ]
+             [V\feattab{
+%              \vform \type{fin},\\
+                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird;will] ] ] ] ]
+\end{forest}}
+\caption{\label{fig-vc-nom-acc}Bildung eines Verbalkomplexes und Realisierung der Argumente in normaler
+  Abfolge (vorläufige Version)}
+\end{figure}
+
+
+
+
+\begin{figure}
+\centerfit{
+\begin{forest}
+sm edges
+[V\feattab{
+              \sliste{ }}
+        [{NP[\type{acc}]} [das Buch;the book, roof] ]
+        [V\feattab{
+              \sliste{ NP[\type{acc}] }}
+          [{NP[\type{nom}]} [keiner;nobody] ]
+          [V\feattab{
+%              \vform \type{fin},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}] }} 
+             [V\feattab{
+%              \vform \type{bse},\\
+              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen;read] ]
+             [V\feattab{
+%              \vform \type{fin},\\
+                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird;will] ] ] ] ]
+\end{forest}}
+\caption{\label{fig-vc-acc-nom}Bildung eines Verbalkomplexes und Scrambling der Argumente (vorläufige Version)}
+\end{figure}
+
+\noindent
+Ich folge
+\citet[Abschnitt~3.1.1]{Kiss95a} und repräsentiere das Subjekt nicht"=finiter Verben als den Wert eines
+speziellen Merkmals \subj. \subj unterscheidet sich von \spr und \comps darin, dass es kein Valenzmerkmal ist. Der
+Grund für diese Sonderbehandlung ist, dass das Subjekt nicht als Teil einer nicht"=finiten
+Verbalphrase realisiert werden kann. Das ist besonders klar bei Infinitiven mit \emph{zu}:
+\eal
+\ex[]{
+Aicke hat Conny versprochen, [das Buch zu lesen].
+}
+\ex[*]{
+Aicke hat Conny versprochen, [sie das Buch zu lesen].
+}
+\zl
+Andere nicht"=finite Verben (reine Infinitive und Partizipien) können nicht ins \nf{} gestellt werden, aber sie
+können vorangestellt werden. (\mex{1}) zeigt, dass das Subjekt nicht zusammen mit anderen Argumenten
+des Verbs ins \vf{} gestellt werden kann.
+\eal
+\judgewidth{?*}
+\ex[]{
+{[}Das Buch lesen{]} wird Aicke morgen.
+}
+\ex[*]{
+{[}Aicke lesen{]} wird das Buch morgen.
+}
+\ex[?*]{
+{[}Aicke das Buch lesen{]} wird morgen.
+}
+\zl
+Der Lexikoneintrag für die nicht"=finite Form von \emph{lesen} ist in (\mex{1}) angegeben:
+\ea
+\emph{lesen} nicht"=finite Form:\\
+\ms{
+subj  & \sliste{ NP[\type{nom}] }\\
+comps & \sliste{ NP[\type{acc}] }\\
+}
+\z
+
+\noindent
+Die folgende Merkmal-Wert-Matrix (AVM)\is{Merkmal-Wert-Matrix (AVM)} ist eine Repräsentation des Hilfsverbs \emph{werden}:
+\eas
+\emph{werden} nicht"=finite Form:\\
+\ms{
+subj  & \ibox{1}\\
+comps & \ibox{2} $\oplus$ \sliste{ V[\vform \type{bse}, \textsc{lex}+, \subj \ibox{1}, \comps \ibox{2}] }\\
+}
+\zs
+\emph{werden} selegiert ein Verb, das die \type{bse}-Form hat, also einen Infinitiv ohne
+\emph{zu}. Das eingebettete Element muss lexikalisch sein (\textsc{lex}+), das heißt ein einzelnes Wort oder ein
+Verbalkomplex. Von allen Phrasen, die durch das Kopf-Komplement-Schema und das Spezifikator-Kopf-Schema
+lizenziert werden, wird angenommen, dass sie \textsc{lex}$-$ sind.
+Die Kästchen mit Zahlen sind im Wesentlichen Variablen. Ihre Werte hängen von den Werten der
+eingebetteten Verben ab. Daher kann dieser Lexikoneintrag mit einem Verb wie \emph{lesen}
+verwendet werden, das ein nominativisches und ein akkusativisches Argument nimmt, aber auch mit einem Verb wie \emph{helfen},
+das ein nominativisches und ein dativisches Argument nimmt.
+
+Bevor ich auf die Details der Analyse eingehe, muss ich die Lexikoneinträge für die finite
+Form der Auxiliare bereitstellen. Da das Subjekt finiter Verben natürlich realisiert werden kann, muss es
+in einer der Valenzlisten repräsentiert werden. Wie in Abschnitt~\ref{sec-intro-spr-comps} besprochen,
+werden \ili{deutsch}e Subjekte in der \comps-Liste finiter Verben repräsentiert. Daher hat der Lexikoneintrag für
+\emph{wird} die folgende Form:
+\eas
+\emph{wird} finite Form:\\
+\ms{
+subj  & \sliste{}\\
+comps & \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{ V[\vform \type{bse}, \textsc{lex}+, \subj \ibox{1}, \comps \ibox{2}] }\\
+}
+\zs
+\largerpage
+Das besagt im Wesentlichen, dass die Valenz von \emph{wird} aus einem eingebetteten Verb besteht und aus dem, was die
+\subjl{} dieses Verbs ist, plus dem, was die \comps-Liste dieses Verbs ist. Das wird für
+\emph{lesen wird} in Abbildung~\vref{fig-lesen-wird-details} veranschaulicht.\footnote{%
+Die Lexikoneinträge komplexbildender Prädikate verlangen, dass ihr verbales Argument \lex{}$+$ ist. So ist in
+Abbildung~\ref{fig-lesen-wird-details} auch \emph{lesen} \lex{}$+$. Da diese Information
+für die Diskussion der Argumentattraktion nicht relevant ist, wird sie in
+Abbildung~\ref{fig-lesen-wird-details} und den folgenden Abbildungen weggelassen. \emph{lesen} und \emph{lesen können}
+müssen in den Verbalkomplexen, die in den
+Abbildungen~\ref{fig-lesen-koennen-wird} und~\ref{fig-wird-lesen-koennen} dargestellt sind, \lex{}$+$ sein. Natürlich sind Lexikoneinträge wie
+\emph{wird} und \emph{können} ebenfalls \lex{}$+$, weil sie
+Wörter sind. Diese Information in den Bäumen darzustellen, wäre eher verwirrend als erklärend, und daher
+habe ich beschlossen, die \lex-Information wegzulassen.
+}
+\begin{figure}
+\begin{forest}
+sm edges
+[V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} } 
+        [{\ibox{3} V}\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } } [lesen;read] ]
+        [V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{ \ibox{3} } } [wird;will] ] ]
+\end{forest}
+\caption{\label{fig-lesen-wird-details}Detaillierte Analyse eines Verbalkomplexes}
+\end{figure}
+Das Auxiliar selegiert einen Infinitiv ohne \emph{zu} \iboxb{3}. Das wird durch den Wert
+\type{bse} für die \vformf{} des selegierten Verbs sichergestellt: \type{bse}\istype{bse} steht für einen Infinitiv ohne
+\emph{to}/\emph{zu}/\ldots{}, \type{inf}\istype{inf} steht für eine Infinitivform mit Marker, \type{ppp}\istype{ppp}
+steht für ein Partizip und \type{fin}\istype{fin} für ein finites Verb. Das Subjekt des selegierten Infinitivs
+\iboxb{1} und die Komplemente \iboxb{2} werden übernommen. Das Ergebnis ist, dass \emph{lesen wird} dieselben
+Argumente hat wie \emph{liest}.
+
+Um das Ganze noch unterhaltsamer zu machen, können wir es komplexer gestalten und uns Verbalkomplexe mit
+drei Verben anschauen. Abbildung~\vref{fig-lesen-koennen-wird} zeigt die Analyse des Verbalkomplexes \emph{lesen können wird}
+in Sätzen wie (\mex{1}):
+\ea
+\label{ex-lesen-koennen-wird}
+{[}dass{]} sie das Buch lesen können wird
+\z
+
+\noindent
+Die Analyse von (\mex{0}) ist in Abbildung~\ref{fig-lesen-koennen-wird} angegeben.
+\begin{figure}
+\centerfit{%
+\begin{forest}
+sm edges
+[V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} } 
+        [{\ibox{4} V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1},\\
+              \comps \ibox{2} }} 
+           [{\ibox{3} V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen;read] ]
+           [V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1},\\
+              \comps \ibox{2} $\oplus$ \sliste{
+                \ibox{3} } } [können;can] ] ]
+        [V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{
+                \ibox{4} } } [wird;will] ] 
+]
+\end{forest}}
+\caption{\label{fig-lesen-koennen-wird}Analyse eines deutschen Verbalkomplexes mit drei Verben in kanonischer Abfolge}
+\end{figure}
+
+%\largerpage[2]
+Ein interessanter Aspekt der Analyse ist, dass sie ein Phänomen erklären kann, das Auxiliary
+Flip\is{Auxiliary Flip} oder \emph{Oberfeldumstellung} genannt wird. Das \ili{Deutsch}e erlaubt es optional, Verben, die ein Modalverb\is{Verb!Modal} regieren,
+links vom Verbalkomplex statt rechts vom Modalverb zu platzieren. Statt
+(\ref{ex-lesen-koennen-wird}) kann man also auch die Abfolge in (\mex{1}) verwenden:
+\ea
+{[}dass{]} sie das Buch wird lesen können
+\z
+\begin{figure}
+\centerfit{%
+\begin{forest}
+sm edges
+[V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} } 
+        [V\feattab{
+              \vform \type{fin},\\
+              \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{
+                \ibox{4} } } [wird;will] ]
+        [{\ibox{4} V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1},\\
+              \comps \ibox{2} }} 
+           [{\ibox{3} V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen;read] ]
+           [V\feattab{
+              \vform \type{bse},\\
+              \subj  \ibox{1},\\
+              \comps \ibox{2} $\oplus$ \sliste{
+                \ibox{3} } } [können;can] ] ] 
+]
+\end{forest}}
+\caption{\label{fig-wird-lesen-koennen}Analyse eines deutschen Verbalkomplexes mit drei Verben mit
+  Auxiliary Flip}
+\end{figure}
+
+\noindent
+Nachdem ich die Analyse von Verbalkomplexen besprochen habe, wie sie aus den OV-Sprachen wie dem
+\ili{Deutsch}en, \ili{Niederländisch}en und \ili{Afrikaans} bekannt sind, möchte ich kurz auf die SVO-Sprachen wie das \ili{Dänisch} und das \ili{Englisch} eingehen. Normalerweise verlangt ein Kopf, dass sein Argument gesättigt ist, das heißt, die
+\compsv{} muss bei NP, PPs, APs, CPs und satzwertigen sowie VP-Argumenten die leere Liste sein. Verbalkomplexe sind anders: Wörter werden direkt kombiniert. Die
+VO-Sprachen unterscheiden sich von den OV-Sprachen darin, dass sie dies nicht erlauben. In VO-Sprachen bildet das Verb eine
+Phrase mit seinen Komplementen, und diese Verbalphrase kann unter ein anderes Verb eingebettet werden. (\mex{1}a)
+zeigt ein Beispiel mit Hilfsverben, (\mex{1}b) ist ein Beispiel mit einem Vollverb, das zusätzlich eine
+Infinitiv-Verbalphrase mit \emph{to} und ein Objekt nimmt.
+\eal
+\ex
+\gll Kim [will [have [read the book]]].\\
+     Kim {[}wird {[}haben {[}gelesen das Buch{]}{]}{]}\\
+\glt `Kim wird das Buch gelesen haben.'
+\ex
+\gll Somebody [promised her [to read it]].\\
+     jemand {[}versprach ihr {[}zu lesen es{]}{]}\\
+\glt `Jemand hat ihr versprochen, es zu lesen.'
+\zl
+Sprachen wie das \ili{Dänisch} und das \ili{Englisch} haben nur das Kopf-Komplement-Schema und das Spezifikator-Kopf-
+Schema, während Sprachen wie das \ili{Niederländisch} und das \ili{Deutsch} ein zusätzliches Schema haben, das ungesättigte
+Wörter kombinieren kann.
+%\todostefan{check whether this has to be explained better}
+Das Schema für die Prädikatkomplexbildung ist in Abbildung~\vref{fig-pred-complex} skizziert.
+\begin{figure}
+\begin{forest}
+[{[\comps \ibox{1}]}
+  [\ibox{2} ]
+  [{[\comps \ibox{1} $\oplus$ \sliste{ \ibox{2} }]}]]
+\end{forest}
+\caption{\label{fig-pred-complex}Skizze des Prädikatkomplex"=Schemas\is{Schema!Prädikatkomplex}}
+\end{figure}
+Dieses Schema ist dem Kopf-Komplement-Schema sehr ähnlich, das auf
+Seite~\pageref{fig-head-comp} angegeben wurde. Der Unterschied besteht darin, dass dieses Schema keine \lex{}$-$-Elemente
+lizenziert, wie es das Spezifikator-Kopf- und das Kopf-Komplement-Schema tun. Daher ist die Kombination zweier Verben
+mit \lex{}+-Anforderungen regierender Verben kompatibel, und eine Einbettung in noch komplexere Verbal\-
+komplexe ist möglich. Abbildung~\ref{fig-lesen-koennen-wird} ist ein Beispiel: Die Kombination von
+\emph{lesen} und \emph{können} ist mit der \lex{}+-Anforderung von \emph{wird}
+kompatibel. Das Prädikatkomplex-Schema unterscheidet sich vom Kopf-Komplement-Schema im \ili{Deutsch}en auch darin, dass
+es den Kopf mit dem letzten Element der Valenzliste kombiniert. Das ist das eingebettete Verb, und es muss
+vor jedem anderen Argument mit dem Kopf kombiniert werden, da man nicht wüsste, was die anderen
+Argumente sind, weil sie vom eingebetteten Verb übernommen werden.
+
+Bevor ich mich dem nächsten Phänomen zuwende, möchte ich kurz eine Alternative zu der hier vorgestellten
+Verbalkomplexanalyse besprechen. Ein alternativer Vorschlag bestand darin, Auxiliare im \ili{Deutsch}en als VP-
+einbettende Verben zu analysieren \citep{Wurmbrand2003b}. Unser Standardbeispiel hätte dann die Analyse in (\mex{1}):
+\ea
+dass keiner [[das Buch lesen] wird]
+\z
+Die Frage, die solche Analysen beantworten müssen, ist, wie das Scrambling der Argumente der beteiligten Verben
+erklärt werden kann. Die Antwort ist oft, dass man annimmt, dass das Objekt des eingebetteten Verbs
+aus der VP extrahiert und an die linke Peripherie des Satzes bewegt wird. Das wird in (\mex{1}) gezeigt:
+\ea
+dass [das Buch]$_i$ keiner [[ \_$_i$ lesen] wird]
+\z
+Analysen, die Scrambling als Bewegung behandeln, sind jedoch problematisch, da sie zusätzliche
+Lesarten von Sätzen vorhersagen, die Quantoren in ihren NPs haben (\citealp[\page 146]{Kiss2001a};
+\citealp[Abschnitt~2.6]{Fanselow2001a}).\todostefan{Change discussion}
+
+
+Bevor ich mich der Analyse der Verbstellung zuwende, möchte ich zeigen, wie Sätze mit mehreren Verben
+\label{page-English-Aux-VPs}
+in SVO-Sprachen analysiert werden können. Abbildung~\vref{fig-vp-embedding-svo} zeigt die Analyse der \ili{englisch}en Version von Satz
+(\ref{ex-dass-keiner-das-buch-lesen-wird}).
+\begin{figure}
+\centerfit{
+\begin{forest}
+sm edges
+[S
+        [{NP[\type{nom}]} [nobody] ]
+        [VP
+          [V%% \feattab{
+            %%   spr \sliste{ NP[\type{nom}] }\\
+            %%   comps \sliste{ VP }} 
+              [will] ]
+          [VP%% \feattab{
+             %%  spr \sliste{ NP[\type{nom}] }}
+            [V%% \feattab{
+              %% spr \sliste{ NP[\type{nom}] }\\
+              %% comps \sliste{ NP[\type{acc}] }} 
+              [read] ]
+            [{NP[\type{acc}]} [the book, roof] ] ] ] ]
+\end{forest}}
+\caption{\label{fig-vp-embedding-svo}Einbettung einer VP in SVO-Sprachen}
+\end{figure}
+Das Verb \emph{reads} selegiert ein Subjekt und ein Objekt. Das Verb bildet eine VP mit der NP \emph{the
+  book}. Dieser VP fehlt noch ein Subjekt. Das Auxiliar \emph{will} selegiert eine VP und ein Subjekt,
+das mit dem Subjekt von \emph{read} identisch ist. Die Kombination von \emph{will} und der VP wird
+durch das Kopf-Komplement-Schema lizenziert, das in Abbildung~\vref{fig-head-comp} skizziert wurde.
+
+Das Äquivalent von \emph{lesen können wird} kann hier nicht angegeben werden, da \ili{englisch}e Modalverben\is{Verb!Modal}
+keine nicht"=finiten Formen haben, aber man kann Beispiele mit Modalverben als höchstem Verb konstruieren:
+\ea
+\gll She [must [have [seen it]]].\\
+     sie {[}muss {[}haben {[}gesehen es{]}{]}{]}\\
+\glt `Sie muss es gesehen haben.'
+\z
+Dieser Satz hat eine Struktur, die der in Abbildung~\ref{fig-vp-embedding-svo} ähnlich ist:
+\emph{must} und \emph{have} betten beide VPs ein.
+
+Schließlich zeigt Abbildung~\vref{fig-somebody-has-promised-him-to-read-it} die Übersetzung von
+(\ref{ex-weil-es-ihr-jemand-zu-lesen-versprochen-hat}):
+\ea
+\gll Somebody has promised her to read it.\\
+     jemand hat versprochen ihr zu lesen es\\
+\glt `Jemand hat ihr versprochen, es zu lesen.'
+\z
+\emph{promise} ist ein Verb, das ein Subjekt, ein Objekt und ein VP-Komplement nimmt.
+\begin{figure}
+\centerfit{
+\begin{forest}
+sm edges
+[S
+        [{NP[\type{nom}]} [somebody] ]
+        [VP
+            [V [has]]
+            [VP 
+              [\vbar [V [promised] ]
+                     [{NP[\type{acc}]} [her] ] ]
+              [VP [V [to]]
+                [VP
+                  [V [read] ]
+                  [{NP[\type{acc}]} [the book, roof] ] ] ] ] ] ]
+\end{forest}}
+\caption{\label{fig-somebody-has-promised-him-to-read-it}Einbettung einer VP mit Verben, die ein
+  zusätzliches Objekt nehmen}
+\end{figure}
+Wie in der Analyse von (\ref{ex-nobody-gave-the-child-a-book}) auf
+Seite~\pageref{ex-nobody-gave-the-child-a-book} -- die hier der Bequemlichkeit halber als (\mex{1}) wiederholt wird
+-- wird das Verb \emph{promised} zuerst mit seinem NP-Komplement und dann mit seinem VP-
+Argument kombiniert.
+\ea
+\label{ex-nobody-gave-the-child-a-book-three}
+\gll Nobody gave the child a book.\\
+     niemand gab dem Kind ein Buch\\
+\glt `Niemand gab dem Kind ein Buch.'
+\z
+Das VP-Argument von \emph{promised} in Abbildung~\ref{fig-somebody-has-promised-him-to-read-it} besteht aus \emph{to} und einer weiteren VP mit einem Infinitiv in Grundform. \emph{to} wird
+als Hilfsverb analysiert \parencites[\page 600]{GPS82a-u}[\page 147]{Sag2020a}.
+Es ist wichtig anzumerken, dass das Objekt \emph{him} in keiner anderen Position erscheinen kann (abgesehen von
+einer Extraktion an die linke Peripherie). Zum Beispiel kann es nicht in der Position von \emph{the book} erscheinen,
+und dasselbe gilt für \emph{the book}: Diese Phrase kann an keiner anderen Stelle als in der
+Objektposition erscheinen.
+\is{Verbalkomplex|)}
+
+\exercises{
+
+
+\begin{enumerate}
+\item Skizzieren Sie die Analyse der Verbalkomplexe in den folgenden Beispielen:
+\eal
+\ex
+dass sie darüber lachen muss
+\ex
+dass sie darüber hat lachen müssen
+\ex
+dass sie darüber     wird haben lachen müssen
+\zl
+Geben Sie bitte die \subj- und die \comps-Werte an. Die \spr-Werte können Sie weglassen, da sie für alle \ili{deutsch}en Verben ohnehin die leere Liste sind.
+
+
+\item Suchen Sie zwei Sätze mit einem Verbalkomplex in einer Zeitung oder in Korpora (zum Beispiel im
+  COSMAS-Korpus\footnote{%
+\url{https://cosmas2.ids-mannheim.de}, 2020-05-11.}) und
+  analysieren Sie die Verbalkomplexe.
+
+\item Suchen Sie in einem Korpus nach Verbalkomplexen mit mehr als vier Verben und dokumentieren Sie Ihre Suche.
+\end{enumerate}
+
+}
+
+\furtherreading{Die Analyse von Verbalkomplexen in der HPSG wurde zuerst von \citet{HN89b,HN89a} entwickelt.
+\citew{HN94a} ist die erste begutachtete Publikation zu diesem Thema von Hinrichs \&
+Nakazawa. \citew{Kiss95a} ist eine Monographie, die sich mit Verbalkomplexen befasst. \citet{Meurers2000b} befasst sich
+ebenfalls mit Verbalkomplexen einschließlich schwieriger Fälle wie der sogenannten \emph{Zwischenstellung},
+die hier nicht behandelt wird. \citet{Mueller2002b} behandelt nicht nur Verbalkomplexe, sondern auch andere Typen
+komplexer Prädikate wie Adjektiv-Verb-Komplexe, Resultativkonstruktionen und Partikelverben.
+
+\citet{GS2021a} geben einen Überblick über Analysen komplexer Prädikate in der HPSG.
+
+\citet[Kapitel~7]{Haider2010a} diskutiert verschiedene Vorschläge im Rahmen der Government \& Binding.}
+
+
+
+%      <!-- Local IspellDict: en_US -->
