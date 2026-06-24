@@ -5,17 +5,18 @@
 % for PoD with two volumes
 %\ifoot{}\ofoot{}
 %\phantomsection%this allows hyperlink in ToC to work
-\printbibliography[heading=references] 
+%\currentpdfbookmark{Literatur}{references} % adds a PDF bookmark
+\printbibliography 
 \cleardoublepage
 
 \small
-
 \input{crossrefs-index}   
+
 
 \phantomsection%this allows hyperlink in ToC to work
 \addcontentsline{toc}{chapter}{Index} 
-\addcontentsline{toc}{section}{Name index}
-\ohead{Name index}
+\addcontentsline{toc}{section}{\lsNameIndexTitle}
+\ohead{\lsNameIndexTitle}
 %with biblatex
 %\printindex
 %without it 
@@ -23,11 +24,12 @@
 \printindex 
   
 \phantomsection%this allows hyperlink in ToC to work
-\addcontentsline{toc}{section}{Language index}
-\ohead{Language index} 
+\addcontentsline{toc}{section}{\lsLanguageIndexTitle}
+\ohead{\lsLanguageIndexTitle} 
 \printindex[lan] 
   
 \phantomsection%this allows hyperlink in ToC to work
-\addcontentsline{toc}{section}{Subject index}
-\ohead{Subject index}
+\addcontentsline{toc}{section}{\lsSubjectIndexTitle}
+\ohead{\lsSubjectIndexTitle}
 \printindex[sbj]
+

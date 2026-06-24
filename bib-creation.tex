@@ -32,10 +32,7 @@
 %\setboolean{draft}{false}
 \setboolean{draft}{true}
 
-\usepackage{etoolbox}
 \newtoggle{draft}\toggletrue{draft}
-
-
 
 
 
@@ -44,19 +41,27 @@
 
 \newcommand{\LATER}[1]{}
 
+% load memoize before german.sty
+
+%\usepackage{nomemoize} 
+\usepackage{memoize} 
+%\memoizeset{readonly}
+% see below for further settings
+
 \input{localmetadata.tex}
 \input{localpackages.tex}
 \input{localcommands.tex}
 %\input{locallangscifixes.tex}
 
-\usepackage{memoize}
-%\usepackage{nomemoize}
-\memoizeset{
-  memo filename prefix={germanisch.memo.dir/},
-  enable=dependency,
+
+\mmzset{
+  prefix={germanisch.memo.dir/},
+%  register=\todo{O{}+m},
+%  prevent=\todo,
 }
 
-\memoizeset{readonly}
+
+\mmzset{readonly}
 
 \renewcommand{\addlines}[1][1]{}
 
@@ -65,7 +70,7 @@
 %\bibliography{gt}
 
 
-\input germanic-include
+\input germanisch-include
 
 %\InputIfFileExists{tmpfile.tex}{\input{tmpfile}}{\relax}
 
