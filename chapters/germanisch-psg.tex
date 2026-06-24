@@ -176,16 +176,16 @@ Die Ableitung in (\mex{0}) kann auch als Baum dargestellt werden. Dies zeigt Abb
 \begin{forest}
 sm edges
 [S
-  [NP [er;he] ]
+  [NP [er] ]
   [NP
-    [Det [das;the] ]
-    [N [Buch;book] ] 
+    [Det [das] ]
+    [N [Buch] ]
   ]
   [NP
-    [Det [dem;the] ]
-    [N [Kind;child] ] 
+    [Det [dem] ]
+    [N [Kind] ]
   ]
-  [V [gibt;gives] ]
+  [V [gibt] ]
 ]
 \end{forest}
 }
@@ -245,16 +245,16 @@ Diese Grammatik lizenziert nur binär verzweigende Strukturen, wie in Abbildung~
 \begin{forest}
 sm edges
 [V
-  [NP [er;he] ]
+  [NP [er] ]
   [V
     [NP
-      [Det [das;the] ]
-      [N [Buch;book] ] ]
+      [Det [das] ]
+      [N [Buch] ] ]
     [V
       [NP
-        [Det [dem;the] ]
-        [N [Kind;child] ] ]
-      [V [gibt;gives] ] ] ] ]
+        [Det [dem] ]
+        [N [Kind] ] ]
+      [V [gibt] ] ] ] ]
 \end{forest}
 }
 \caption{\label{er-das-buch-dem-mann-gibt-bin}Analyse von \emph{er das Buch dem Kind gibt} mit einer
@@ -743,20 +743,20 @@ ohne Adjektiv und die einer Nominalphrase mit einem oder zwei Adjektiven.
 \begin{forest}
 sm edges
 [NP
-   [Det [ein;a] ]
+   [Det [ein] ]
    [\nbar
-      [N [Eichhörnchen;squirrel] ] ] ]
+      [N [Eichhörnchen] ] ] ]
 \end{forest}}
 \hfill
 \scalebox{.9}{%
 \begin{forest}
 sm edges
 [NP
-   [Det [ein;a] ]
+   [Det [ein] ]
    [\nbar
-      [A [graues;gray] ]
+      [A [graues] ]
       [\nbar
-        [N [Eichhörnchen;squirrel] ] ] ] ]
+        [N [Eichhörnchen] ] ] ] ]
 \end{forest}}
 %
 \hfill
@@ -764,13 +764,13 @@ sm edges
 \begin{forest}
 sm edges
 [NP
-  [Det [ein;a] ]
+  [Det [ein] ]
     [\nbar
-    [A [großes;big] ]
+    [A [großes] ]
        [\nbar
-       [A [graues;gray] ]
+       [A [graues] ]
          [\nbar
-         [N [Eichhörnchen;squirrel] ] ] ] ] ]
+         [N [Eichhörnchen] ] ] ] ] ]
 \end{forest}}
 %\hfill
 %\mbox{}
@@ -880,21 +880,21 @@ die Regel in (\ref{xbar-PP-Adjunkt-an-N}) lizenziert wird.
 \begin{forest}
 sm edges
 [NP
- [Det [das;the] ]
+ [Det [das] ]
  [\nbar
-   [N [Bild;picture] ]
-   [PP [vom Gleimtunnel;of.the Gleimtunnel,roof ] ] ] ]
+   [N [Bild] ]
+   [PP [vom Gleimtunnel,roof ] ] ] ]
 \end{forest}%
 \hspace{2em}%
 \begin{forest}
 sm edges
 [NP
-  [Det [das;the] ]
+  [Det [das] ]
   [\nbar
     [\nbar
-      [N [Bild;picture] ]
-      [PP [vom Gleimtunnel;of.the Gleimtunnel,roof ] ] ] 
-    [PP [im Gropiusbau;in.the Gropiusbau,roof ] ] ] ]
+      [N [Bild] ]
+      [PP [vom Gleimtunnel,roof ] ] ]
+    [PP [im Gropiusbau,roof ] ] ] ]
 \end{forest}}
 \caption{\label{Abbildung-NP-mit-PP-Argument}Kombination eines Nomens mit dem PP"=Komplement
   \emph{vom Gleimtunnel} rechts mit einem Adjunkt-PP}
@@ -952,9 +952,9 @@ Die entsprechenden Bäume sind in Abbildung~\vref{Abbildung-NP-ohne-Nomen} darge
 \begin{forest}
 sm edges
 [NP
-  [Det [ein;an] ]
+  [Det [ein] ]
   [\nbar
-    [A [interessantes;interesting] ]
+    [A [interessantes] ]
     [\nbar
       [N [\trace ] ] ] ] ]
 \end{forest}
@@ -962,10 +962,10 @@ sm edges
 \begin{forest}
 sm edges
 [NP
-  [Det [das;the] ]
+  [Det [das] ]
   [\nbar
     [N [\trace] ]
-    [PP [vom Gleimtunnel;of.the Gleimtunnel, roof] ] ] ]
+    [PP [vom Gleimtunnel, roof] ] ] ]
 \end{forest}
 \hfill%
 \mbox{}
@@ -1017,7 +1017,7 @@ sm edges
 [NP
   [Det [\trace] ]
   [\nbar
-    [N [Bücher;books] ] ] ]
+    [N [Bücher] ] ] ]
 \end{forest}
 \hfill
 \begin{forest}
@@ -1025,7 +1025,7 @@ sm edges
 [NP
   [Det [\trace] ]
   [\nbar
-    [A [interessante;interesting] ]
+    [A [interessante] ]
     [\nbar
       [N [\trace] ] ] ] ]
 \end{forest}
@@ -1186,17 +1186,17 @@ vor dem Abgrund
 sm edges
 [PP
   [\pbar
-    [P [vor;before] ]
-    [NP [dem Abgrund;the abyss, roof] ] ] ]
+    [P [vor] ]
+    [NP [dem Abgrund, roof] ] ] ]
 \end{forest}
 \hfill
 \begin{forest}
 sm edges
 [PP
-  [AP [kurz;shortly,roof] ]
+  [AP [kurz,roof] ]
   [\pbar
-    [P [vor;before] ]
-    [NP [dem Abgrund;the abyss,roof] ] ] ]
+    [P [vor] ]
+    [NP [dem Abgrund,roof] ] ] ]
 \end{forest}
 %% \begin{tikzpicture}
 %% \tikzset{level 1+/.style={level distance=2\baselineskip}}
@@ -1434,9 +1434,9 @@ sm edges
 [NP
   [DetP
     [\detbar
-      [Det [das;the] ] ] ]
+      [Det [das] ] ] ]
   [\nbar
-    [N [Bild;picture] ] ] ]
+    [N [Bild] ] ] ]
 \end{forest}
 \hfill
 \begin{forest}
@@ -1444,19 +1444,19 @@ sm edges
 [NP
   [DetP
     [\detbar
-      [Det [das;the] ] ] ]
+      [Det [das] ] ] ]
   [\nbar
     [AP
       [\abar
-        [A [schöne;beautiful] ] ] ]
+        [A [schöne] ] ] ]
     [\nbar
-      [N [Bild;picture] ]
-      [PP 
+      [N [Bild] ]
+      [PP
         [\pbar
-          [P [von;of] ]
+          [P [von] ]
           [NP
             [\nbar
-              [N [Paris;Paris] ] ] ] ] ] ] ] ]
+              [N [Paris] ] ] ] ] ] ] ] ]
 \end{forest}
 %
 \hfill\mbox{}
@@ -1489,24 +1489,24 @@ werden die viel einfacheren in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris-HPS
 \begin{forest}
 sm edges
 [NP
-  [Det [das;the] ]
+  [Det [das] ]
   [\nbar
-    [Bild;picture] ] ]
+    [Bild] ] ]
 \end{forest}
 \hfill
 \begin{forest}
 sm edges
 [NP
-  [Det [das;the] ]
+  [Det [das] ]
   [\nbar
     [AP
-      [schöne;beautiful] ]
+      [schöne] ]
     [\nbar
-      [N [Bild;picture] ]
-      [PP 
-        [P [von;of] ]
+      [N [Bild] ]
+      [PP
+        [P [von] ]
         [NP
-          [Paris;Paris] ] ] ] ] ]
+          [Paris] ] ] ] ] ]
 \end{forest}
 %
 \hfill\mbox{}
