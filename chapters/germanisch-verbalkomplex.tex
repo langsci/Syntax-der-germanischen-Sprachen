@@ -80,10 +80,10 @@ sm edges
               \sliste{ NP[\type{nom}], NP[\type{acc}] } } 
         [V\feattab{
 %              \vform \type{bse},\\
-              \sliste{ NP[\type{nom}], NP[\type{acc}]} }, name=lesen [lesen;read] ]
+              \sliste{ NP[\type{nom}], NP[\type{acc}]} }, name=lesen [lesen] ]
         [V\feattab{
 %              \vform \type{fin},\\
-              \sliste{ NP[\type{nom}], NP[\type{acc}], V }}, name=wird [wird;will] ]
+              \sliste{ NP[\type{nom}], NP[\type{acc}], V }}, name=wird [wird] ]
 ]
 \draw[semithick,->] (lesen)..controls +(south east:2) and +(south west:2)..(wird);
 \end{forest}
@@ -122,19 +122,19 @@ Abbildung~\ref{fig-vc-acc-nom} zeigt die Analyse von (\mex{1}b).
 sm edges
 [V\feattab{
               \sliste{ }}
-        [{NP[\type{nom}]} [keiner;nobody] ]
+        [{NP[\type{nom}]} [keiner] ]
         [V\feattab{
               \sliste{ NP[\type{nom}] }}, s sep+=1em
-          [{NP[\type{acc}]} [das Buch;the book, roof] ]
+          [{NP[\type{acc}]} [das Buch, roof] ]
           [V\feattab{
 %              \vform \type{fin},\\
               \sliste{ NP[\type{nom}], NP[\type{acc}]}}
              [V\feattab{
 %              \vform \type{bse},\\
-              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen;read] ]
+              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen] ]
              [V\feattab{
 %              \vform \type{fin},\\
-                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird;will] ] ] ] ]
+                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird] ] ] ] ]
 \end{forest}}
 \caption{\label{fig-vc-nom-acc}Bildung eines Verbalkomplexes und Realisierung der Argumente in normaler
   Abfolge (vorläufige Version)}
@@ -149,19 +149,19 @@ sm edges
 sm edges
 [V\feattab{
               \sliste{ }}
-        [{NP[\type{acc}]} [das Buch;the book, roof] ]
+        [{NP[\type{acc}]} [das Buch, roof] ]
         [V\feattab{
               \sliste{ NP[\type{acc}] }}
-          [{NP[\type{nom}]} [keiner;nobody] ]
+          [{NP[\type{nom}]} [keiner] ]
           [V\feattab{
 %              \vform \type{fin},\\
-              \sliste{ NP[\type{nom}], NP[\type{acc}] }} 
+              \sliste{ NP[\type{nom}], NP[\type{acc}] }}
              [V\feattab{
 %              \vform \type{bse},\\
-              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen;read] ]
+              \sliste{ NP[\type{nom}], NP[\type{acc}]}} [lesen] ]
              [V\feattab{
 %              \vform \type{fin},\\
-                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird;will] ] ] ] ]
+                \sliste{ NP[\type{nom}], NP[\type{acc}], V }} [wird] ] ] ] ]
 \end{forest}}
 \caption{\label{fig-vc-acc-nom}Bildung eines Verbalkomplexes und Scrambling der Argumente (vorläufige Version)}
 \end{figure}
@@ -257,10 +257,10 @@ sm edges
         [{\ibox{3} V}\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
-              \comps \ibox{2} \sliste{ NP[\type{acc}] } } [lesen;read] ]
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } } [lesen] ]
         [V\feattab{
               \vform \type{fin},\\
-              \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{ \ibox{3} } } [wird;will] ] ]
+              \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{ \ibox{3} } } [wird] ] ]
 \end{forest}
 \caption{\label{fig-lesen-wird-details}Detaillierte Analyse eines Verbalkomplexes}
 \end{figure}
@@ -295,16 +295,16 @@ sm edges
            [{\ibox{3} V\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
-              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen;read] ]
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen] ]
            [V\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1},\\
               \comps \ibox{2} $\oplus$ \sliste{
-                \ibox{3} } } [können;can] ] ]
+                \ibox{3} } } [können] ] ]
         [V\feattab{
               \vform \type{fin},\\
               \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{
-                \ibox{4} } } [wird;will] ] 
+                \ibox{4} } } [wird] ]
 ]
 \end{forest}}
 \caption{\label{fig-lesen-koennen-wird}Analyse eines deutschen Verbalkomplexes mit drei Verben in kanonischer Abfolge}
@@ -328,7 +328,7 @@ sm edges
         [V\feattab{
               \vform \type{fin},\\
               \comps \ibox{1} $\oplus$ \ibox{2} $\oplus$ \sliste{
-                \ibox{4} } } [wird;will] ]
+                \ibox{4} } } [wird] ]
         [{\ibox{4} V\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1},\\
@@ -336,12 +336,12 @@ sm edges
            [{\ibox{3} V\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1} \sliste{ NP[\type{nom}] }, \\ 
-              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen;read] ]
+              \comps \ibox{2} \sliste{ NP[\type{acc}] } }} [lesen] ]
            [V\feattab{
               \vform \type{bse},\\
               \subj  \ibox{1},\\
               \comps \ibox{2} $\oplus$ \sliste{
-                \ibox{3} } } [können;can] ] ] 
+                \ibox{3} } } [können] ] ]
 ]
 \end{forest}}
 \caption{\label{fig-wird-lesen-koennen}Analyse eines deutschen Verbalkomplexes mit drei Verben mit
