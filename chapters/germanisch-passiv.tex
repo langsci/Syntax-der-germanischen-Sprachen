@@ -1487,23 +1487,23 @@ Die Analyse von (\mex{0}b) ist in Abbildung~\vref{fig-vc-aci} angegeben.
 sm edges
 [V\feattab{
               \sliste{ }}
-        [{NP[\type{snom}]} [der Mann;the man, roof] ]
+        [{NP[\type{snom}]} [der Mann, roof] ]
         [V\feattab{
               \sliste{ NP[\type{snom}] }}
-          [{NP[\type{sacc}]} [den Jungen;the boy, roof] ]
+          [{NP[\type{sacc}]} [den Jungen, roof] ]
           [V\feattab{
 %              \vform \type{fin},\\
               \sliste{ NP[\type{snom}], NP[\type{sacc}]}} 
-            [{NP[\type{sacc}]} [den Aufsatz;the paper, roof] ]
+            [{NP[\type{sacc}]} [den Aufsatz, roof] ]
             [V\feattab{
 %                \vform \type{fin},\\
                 \sliste{ NP[\type{snom}], NP[\type{sacc}], NP[\type{sacc}]}} 
                [~~~~~~V\feattab{
 %                \vform \type{bse},\\
-                 \sliste{ NP[\type{sacc}], NP[\type{sacc}]}} [lesen;read] ]
+                 \sliste{ NP[\type{sacc}], NP[\type{sacc}]}} [lesen] ]
                [V\feattab{
 %                \vform \type{fin},\\
-                  \sliste{ NP[\type{snom}], NP[\type{sacc}], NP[\type{sacc}], V }} [lässt;lets] ] ] ] ] ]
+                  \sliste{ NP[\type{snom}], NP[\type{sacc}], NP[\type{sacc}], V }} [lässt] ] ] ] ] ]
 \end{forest}}
 \caption{\label{fig-vc-aci}Analyse von AcI-Konstruktionen als Anhebungskonstruktionen und der Verbalkomplex im Deutschen}
 \end{figure}
@@ -2312,11 +2312,11 @@ sm edges
 [V\feattab{
             \spr    \sliste{ },\\
             \comps  \sliste{ }}
-   [\ibox{1} \npdat [dem Kind;the child,roof]]
+   [\ibox{1} \npdat [dem Kind,roof]]
    [V\feattab{
             \spr    \sliste{  },\\
             \comps  \sliste{ \ibox{1} }}, s sep+=2em
-      [\ibox{2} \npnom [ein Roman;a novel,roof]]
+      [\ibox{2} \npnom [ein Roman,roof]]
       [V\feattab{
 %            \da     \sliste{ \ibox{3} },\\
             \spr    \sliste{ },\\
@@ -2329,12 +2329,12 @@ sm edges
               \argst \sliste{ \ibox{1}, \ibox{2} }} 
             [V\feattab{
               \da    \ibox{4} \sliste{ NP[\str]  },\\
-              \argst \ibox{4} $\oplus$ \sliste{ \ibox{1}, \ibox{2} }} [{geb-};{give-}]]]
+              \argst \ibox{4} $\oplus$ \sliste{ \ibox{1}, \ibox{2} }} [{geb-}]]]
           [V\feattab{
 %            \da    \sliste{ \ibox{2} },\\
              \spr   \sliste{  },\\
              \comps \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
-             \argst \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }}  [wurde;\textsc{aux}]]]]]
+             \argst \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }}  [wurde]]]]]
 \end{forest}}
 \caption{\label{fig-dem-Kind-ein-Roman-gegeben-wurde}Analyse von \emph{dass dem Kind ein Roman gegeben
     wurde}}
@@ -2668,7 +2668,7 @@ sm edges
            [{\ibox{3} V\feattab{
               \vform \type{inf},\\
               \subj  \sliste{ NP[\str]$_i$ }, \\ 
-              \comps \ibox{1} \sliste{ NP[\str]$_j$ } }} [zu reparieren;to repair] ]
+              \comps \ibox{1} \sliste{ NP[\str]$_j$ } }} [zu reparieren] ]
            [V\feattab{
               \phon \phonliste{ versucht }\\
               \vform \type{ppp},\\
@@ -2679,11 +2679,11 @@ sm edges
 %              \phon \phonliste{ versuch }\\
               \vform \type{ppp},\\
               \da    \ibox{4} \sliste{ NP[\str]$_i$ },\\
-              \argst \ibox{4} $\oplus$ \ibox{1} $\oplus$ \sliste{ \ibox{3} } } [versuch-;try] ] ] ]
+              \argst \ibox{4} $\oplus$ \ibox{1} $\oplus$ \sliste{ \ibox{3} } } [versuch-] ] ] ]
         [V\feattab{
               \vform \type{fin},\\
               \comps \ibox{1} $\oplus$ \sliste{
-                \ibox{2} }} [wurde;\textsc{aux}] ] 
+                \ibox{2} }} [wurde] ]
 ]
 \end{forest}
 \caption{\label{fig-zu-reparieren-versucht-wurde}Die Analyse des Fernpassivs als Passivierung eines komplexbildenden Verbs}
@@ -2851,15 +2851,15 @@ SpecIP zuweist \parencites[\page 104--105]{Chomsky81a}[\page 229]{AS83a}.%
 \begin{forest}
 sm edges
 [TP
-  [{NP[nom]}, name=subject [der Delphin;the dolphin, roof]]
+  [{NP[nom]}, name=subject [der Delphin, roof]]
   [T\rlap{$'$}
 	[VP
 		[V\rlap{$'$}
-			[{NP[dat]}, name=dobject [dem Kind;the child, roof]]
+			[{NP[dat]}, name=dobject [dem Kind, roof]]
 			[V\rlap{$'$}
-				[{NP[acc]},   name=aobject [den Ball;the ball, roof]]
-				[V ,name=verb    [gib-;give-]]]]]
-	[T , name=Infl [-t;-s]]]]
+				[{NP[acc]},   name=aobject [den Ball, roof]]
+				[V ,name=verb    [gib-]]]]]
+	[T , name=Infl [-t]]]]
 \draw[->,dotted] (Infl.north) .. controls (3.5,-0.1) and (-1.5,0.4)  .. ($(subject.north)+(-.1,.1)$);
 \draw[->]        (verb.north) .. controls (2.8,-2.9) and (-.4,.5)   .. ($(subject.north)+(0,.1)$);
 \draw[->,dashed] (verb.north) .. controls (2.8,-3.0) and (0.2,-3.05)   .. ($(dobject.north)+(0,.1)$);
@@ -2892,14 +2892,14 @@ absorbierten Kasus. Daher muss es sich an eine Position bewegen, an der ihm Kasu
 \begin{forest}
 sm edges
 [TP
-[{NP[nom]}, name=subject [der Ball$_i$;the ball,roof]]
+[{NP[nom]}, name=subject [der Ball$_i$,roof]]
 [T\rlap{$'$}
 	[VP
 		[V\rlap{$'$}
-			[{NP[dat]}, name=dobject [dem Kind;the child, roof]]
+			[{NP[dat]}, name=dobject [dem Kind, roof]]
 			[V\rlap{$'$}
 				[NP,   name=aobject [\_$_i$]]
-				[V ,name=verb [gegeben wir-;given \textsc{aux}, roof]]]]]
+				[V ,name=verb [gegeben wir-, roof]]]]]
 	[T  ,name=Infl [-\/d]]]]
 \draw[->,dotted] (Infl.north) .. controls (2.4,.6)   and (-1.5,-.05) .. ($(subject.north)+(0,.1)$);
 %\DrawControl{(2.4,.6)}{1}; \DrawControl{(-1.5,-.05)}{2};
