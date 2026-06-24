@@ -2,7 +2,7 @@ STYLE-PATH= ${HOME}/Library/texmf/tex/latex/
 LANGSCI-PATH=~/Documents/Dienstlich/Projekte/LangSci/Git-HUB/latex/
 
 
-all: germanic.pdf
+all: germanisch.pdf
 
 
 SOURCE=/Users/stefan/Documents/Dienstlich/Bibliographien/biblio.bib $(wildcard *.tex chapters/*.tex)
@@ -11,29 +11,29 @@ SOURCE=/Users/stefan/Documents/Dienstlich/Bibliographien/biblio.bib $(wildcard *
 
 
 # for Stefan. Uses memoize.
-germanic.pdf: germanic.tex $(SOURCE)
-	lualatex -shell-escape -no-pdf germanic |grep -v math
-	biber germanic
-	lualatex -shell-escape -no-pdf germanic |grep -v math
-	biber germanic
-	lualatex germanic -shell-escape -no-pdf |egrep -v 'math|PDFDocEncod' |egrep 'Warning|label|aux'
+germanisch.pdf: germanisch.tex $(SOURCE)
+	lualatex -shell-escape -no-pdf germanisch |grep -v math
+	biber germanisch
+	lualatex -shell-escape -no-pdf germanisch |grep -v math
+	biber germanisch
+	lualatex germanisch -shell-escape -no-pdf |egrep -v 'math|PDFDocEncod' |egrep 'Warning|label|aux'
 	correct-toappear
 	correct-index
-	sed -i.backup s/.*\\emph.*// germanic.adx #remove titles which biblatex puts into the name index
-# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanic.sdx # ordering of references to footnotes
-# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanic.adx
-# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanic.ldx
-	sed -i.backup 's/\\MakeCapital //g' germanic.adx
-	python3 fixindex.py a germanic
-	mv germanicmod.adx germanic.adx
-	sed -i.backup 's/\\MakeCapital //g' germanic.adx
-	footnotes-index.pl germanic.ldx
-	footnotes-index.pl germanic.sdx
-	footnotes-index.pl germanic.adx 
-	makeindex -o germanic.and germanic.adx
-	makeindex -gs index.format -o germanic.lnd germanic.ldx
-	makeindex -gs index.format -o germanic.snd germanic.sdx 
-	lualatex -shell-escape germanic | egrep -v 'math|PDFDocEncod|\\mark' |egrep 'Warning|label'
+	sed -i.backup s/.*\\emph.*// germanisch.adx #remove titles which biblatex puts into the name index
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanisch.sdx # ordering of references to footnotes
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanisch.adx
+# sed -i.backup 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' germanisch.ldx
+	sed -i.backup 's/\\MakeCapital //g' germanisch.adx
+	python3 fixindex.py a germanisch
+	mv germanischmod.adx germanisch.adx
+	sed -i.backup 's/\\MakeCapital //g' germanisch.adx
+	footnotes-index.pl germanisch.ldx
+	footnotes-index.pl germanisch.sdx
+	footnotes-index.pl germanisch.adx 
+	makeindex -o germanisch.and germanisch.adx
+	makeindex -gs index.format -o germanisch.lnd germanisch.ldx
+	makeindex -gs index.format -o germanisch.snd germanisch.sdx 
+	lualatex -shell-escape germanisch | egrep -v 'math|PDFDocEncod|\\mark' |egrep 'Warning|label'
 
 
 
@@ -71,19 +71,19 @@ main.pdf: main.tex $(SOURCE)
 
 
 # just for quick comile and checking
-index: germanic.tex $(SOURCE)
-	lualatex germanic -shell-escape -no-pdf 
-	footnotes-index.pl germanic.ldx
-	footnotes-index.pl germanic.sdx
-	footnotes-index.pl germanic.adx 
-	makeindex -o germanic.and germanic.adx
-	makeindex -gs index.format -o germanic.lnd germanic.ldx
-	makeindex -gs index.format -o germanic.snd germanic.sdx 
-	lualatex -shell-escape germanic | egrep -v 'math|PDFDocEncod|\\mark' |egrep 'Warning|label'
+index: germanisch.tex $(SOURCE)
+	lualatex germanisch -shell-escape -no-pdf 
+	footnotes-index.pl germanisch.ldx
+	footnotes-index.pl germanisch.sdx
+	footnotes-index.pl germanisch.adx 
+	makeindex -o germanisch.and germanisch.adx
+	makeindex -gs index.format -o germanisch.lnd germanisch.ldx
+	makeindex -gs index.format -o germanisch.snd germanisch.sdx 
+	lualatex -shell-escape germanisch | egrep -v 'math|PDFDocEncod|\\mark' |egrep 'Warning|label'
 
 
 # http://stackoverflow.com/questions/10934456/imagemagick-pdf-to-jpgs-sometimes-results-in-black-background
-cover: germanic.pdf
+cover: germanisch.pdf
 	convert $<\[0\] -resize 486x -background white -alpha remove -bordercolor black -border 2  cover.png
 
 
@@ -97,7 +97,7 @@ lsp-styles:
 
 
 
-public: germanic.pdf
+public: germanisch.pdf
 	cp $? /Users/stefan/public_html/Pub/
 
 
@@ -105,20 +105,20 @@ commit:
 	svn commit -m "published version to the web"
 
 forest-commit:
-	git add germanic.for.dir/*.pdf
-	git commit -m "forest trees" germanic.for.dir/*.pdf germanic.for
+	git add germanisch.for.dir/*.pdf
+	git commit -m "forest trees" germanisch.for.dir/*.pdf germanisch.for
 	git push -u origin
 
 
-/Users/stefan/public_html/Pub/germanic.pdf: main.pdf
-	cp -p $?                      /Users/stefan/public_html/Pub/germanic.pdf
+/Users/stefan/public_html/Pub/germanisch.pdf: main.pdf
+	cp -p $?                      /Users/stefan/public_html/Pub/germanisch.pdf
 
 
 o-public: o-public-lehrbuch 
 #commit 
 #o-public-bib
 
-o-public-lehrbuch: /Users/stefan/public_html/Pub/germanic.pdf 
+o-public-lehrbuch: /Users/stefan/public_html/Pub/germanisch.pdf 
 	scp -p $? hpsg.hu-berlin.de:/home/stefan/public_html/Pub/
 
 
@@ -144,16 +144,16 @@ $(PUB_FILE): ../hpsg/make_bib_header ../hpsg/make_bib_html_number  ../hpsg/.bibt
 
 
 # lualatex has to be run two times + biber to get "also printed as ..." right.
-germanic.bib: ../../Bibliographien/biblio.bib $(SOURCE) langsci.dbx bib-creation.tex
+germanisch.bib: ../../Bibliographien/biblio.bib $(SOURCE) langsci.dbx bib-creation.tex
 	lualatex -no-pdf -interaction=nonstopmode -shell-escape bib-creation 
 	biber bib-creation
 	lualatex -no-pdf -interaction=nonstopmode -shell-escape bib-creation
-	biber --output_format=bibtex --output-resolve-xdata --output-legacy-date bib-creation.bcf -O germanic_tmp.bib
-	biber --tool --configfile=biber-tool.conf --output-field-replace=location:address,journaltitle:journal --output-legacy-date germanic_tmp.bib -O germanic.bib
+	biber --output_format=bibtex --output-resolve-xdata --output-legacy-date bib-creation.bcf -O germanisch_tmp.bib
+	biber --tool --configfile=biber-tool.conf --output-field-replace=location:address,journaltitle:journal --output-legacy-date germanisch_tmp.bib -O germanisch.bib
 
 
-todo-bib.unique.txt: germanic.bcf
-	biber -V germanic | grep -i warn | sort -uf > todo-bib.unique.txt
+todo-bib.unique.txt: germanisch.bcf
+	biber -V germanisch | grep -i warn | sort -uf > todo-bib.unique.txt
 
 
 languagecandidates:
@@ -195,7 +195,7 @@ install:
 
 
 source: 
-	tar chzvf ~/Downloads/germanic.tgz *.tex styles/*.sty LSP/
+	tar chzvf ~/Downloads/germanisch.tgz *.tex styles/*.sty LSP/
 
 
 clean:
@@ -206,7 +206,7 @@ check-clean:
 
 
 cleanmemo:
-	rm -f *.mmz chapters/*.mmz germanic.memo.dir/*
+	rm -f *.mmz chapters/*.mmz germanisch.memo.dir/*
 
 realclean: clean
 #	rm -f *.dvi *.ps *.pdf chapters/*.pdf
