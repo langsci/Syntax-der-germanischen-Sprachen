@@ -592,12 +592,12 @@ illustriert das. Der Verbspur fehlt ein V, dem V$'$ fehlt ein V, und dem S ebenf
 \begin{forest}
 sm edges
 [S
-  [{V \sliste{ S//V }} 
-    [V [liest$_j$;reads] ] ]
+  [{V \sliste{ S//V }}
+    [V [liest$_j$] ] ]
        [{S//V}
-           [NP [Conny;Conny] ]
+           [NP [Conny] ]
            [\vbarDSLv
-             [NP [das Buch;the book, roof] ]
+             [NP [das Buch, roof] ]
              [{\mybox[v1]{V}//\mybox[v2]{V}} [\_$_j$] ] ] ] ] ]
 %\draw[semithick,<->,color=green] (v1.south)--(v2.south);
 %% \draw[semithick,<->,color=green] (3.1,-3.9) ..controls +(south east:.5) and +(south west:.5)..(2.7,-3.9);
@@ -628,12 +628,12 @@ Abbildung~\ref{fig-analysis-German-verb-first} mit Abbildung~\vref{fig-analysis-
 \begin{forest}
 sm edges
 [CP
-  [{C \sliste{ S }} [dass;that] ]
+  [{C \sliste{ S }} [dass] ]
   [S
-           [NP [Conny;Conny] ]
+           [NP [Conny] ]
            [V$'$
-             [NP [das Buch;the book, roof] ]
-             [V [liest;reads] ] ] ] ]
+             [NP [das Buch, roof] ]
+             [V [liest] ] ] ] ]
 \end{forest}
 \caption{\label{fig-analysis-German-verb-last}Analyse eines verb"=finalen Satzes mit Komplementierer im Deutschen}
 \end{figure}
@@ -647,13 +647,13 @@ also identisch. Diese Tatsache ist wichtig, wenn es um die Analyse der Skopusfak
 sm edges
 [S
         [{V \sliste{ S//V }} 
-          [V [lacht$_j$;laughs] ] ]
+          [V [lacht$_j$] ] ]
         [{S//V}
-           [NP [er;he] ]
+           [NP [er] ]
            [\vbarDSLv
-             [Adv [nicht;not] ]
+             [Adv [nicht] ]
              [\vbarDSLv
-               [Adv [absichtlich;deliberately] ]
+               [Adv [absichtlich] ]
                [{V//V} [\_$_j$] ] ] ] ] ]
 \end{forest}
 \caption{\label{fig-analysis-German-verb-initial-scope}Analyse von Sätzen mit Adverbialen im Deutschen}
@@ -675,12 +675,12 @@ sie geht ihm im \ili{Dänisch}en voran.
 sm edges
 [S
         [{V \sliste{ S//V }} 
-          [V [læser$_j$;reads] ] ]
+          [V [læser$_j$;liest] ] ]
         [{S//V}
            [NP [Conny;Conny] ]
            [{VP//V}
-             [{V//V} [\_$_j$] ] 
-             [NP [bogen;book.\textsc{def}] ] ] ] ]
+             [{V//V} [\_$_j$] ]
+             [NP [bogen;Buch.\textsc{def}] ] ] ] ]
 \end{forest}
 \caption{\label{fig-analysis-verb-first-Danish}Analyse der Verbstellung im Dänischen}
 \end{figure}%
@@ -695,14 +695,14 @@ die VP anschließt wie in verb"=finalen Sätzen und das Verb vorangestellt wird,
 sm edges
 [S
         [{V \sliste{ S//V }} 
-          [V [læser$_j$;reads] ] ]
+          [V [læser$_j$;liest] ] ]
         [{S//V}
            [NP [Conny;Conny] ]
            [{VP//V}
-             [Adv [ikke;not] ]
+             [Adv [ikke;nicht] ]
              [{VP//V}
-               [{V//V} [\_$_j$] ] 
-               [NP [bogen;book.\textsc{def}] ] ] ] ] ]
+               [{V//V} [\_$_j$] ]
+               [NP [bogen;Buch.\textsc{def}] ] ] ] ] ]
 \end{forest}
 \caption{\label{fig-analysis-verb-fronting-negation-Danish}Die Analyse von Verbvoranstellung und
   Negation im Dänischen}
@@ -813,14 +813,14 @@ Das Buch liest Conny.
 \begin{forest}
 sm edges
 [S
-  [NP$_i$ [das Buch;the book, roof] ]
+  [NP$_i$ [das Buch, roof] ]
   [S/NP
-     [V \sliste{ S//V } 
-        [V [liest$_j$;reads] ] ]
+     [V \sliste{ S//V }
+        [V [liest$_j$] ] ]
      [S//\vSLASHnp
         [NP/NP [\trace$_i$] ]
         [\vbarDSLv
-           [NP [Conny;Conny] ]
+           [NP [Conny] ]
            [V//V [\_$_j$] ] ] ] ] ] ]
 %% \draw[connect] (NP/NP) [bend right] to (S//\vSLASHnp.south east);
 %% \draw[connect] (S//\vSLASHnp.north east) [bend right] to (S/NP.east);
@@ -867,15 +867,15 @@ Abbildung~\vref{fig-bogen-laeser-jens} illustriert das.
 \begin{forest}
 sm edges
 [S
-   [NP$_i$ [bogen;book.\textsc{def}] ]
+   [NP$_i$ [bogen;Buch.\textsc{def}] ]
       [S/NP
          [V \sliste{ S//V }
-           [V [læser$_j$;reads] ] ]
+           [V [læser$_j$;liest] ] ]
            [S//\vSLASHnp
              [NP [Conny;Conny] ]
              [VP//\vSLASHnp
                [V//V  [\_$_j$] ]
-               [NP/NP [\trace$_i$ ] ] ] ] ] ] ] 
+               [NP/NP [\trace$_i$ ] ] ] ] ] ] ]
 %% \draw[connect] (NP/NP.north east) [bend right] to (V/V.south east);
 %% \draw[connect] (V/V.north east) [bend right] to (S//\vSLASHnp.south east);
 %% \draw[connect] (S//\vSLASHnp.north east) [bend right] to (S/NP.east);
@@ -923,12 +923,12 @@ sm edges
    [NP$_i$ [Conny;Conny] ]
       [S/NP
          [V \sliste{ S//V }
-           [V [læser$_j$;reads] ] ]
+           [V [læser$_j$;liest] ] ]
            [S//\vSLASHnp
              [NP/NP [\trace$_i$ ] ]
              [VP//V
                [V//V  [\_$_j$] ]
-               [NP [en bog;a book,baseline,roof] ] ] ] ] ] 
+               [NP [en bog;ein Buch,baseline,roof] ] ] ] ] ]
 %% \draw[connect] (NP/NP.north east) [bend right] to (V/V.south east);
 %% \draw[connect] (V/V.north east) [bend right] to (S//\vSLASHnp.south east);
 %% \draw[connect] (S//\vSLASHnp.north east) [bend right] to (S/NP.east);
@@ -939,15 +939,15 @@ sm edges
 \begin{forest}
 sm edges
 [S
-   [NP$_i$ [Conny;Conny] ]
+   [NP$_i$ [Conny] ]
       [S/NP
          [V \sliste{ S//V }
-           [V [liest$_j$;reads] ] ]
+           [V [liest$_j$] ] ]
            [S//\vSLASHnp
              [NP/NP [\trace$_i$ ] ]
              [\vbarDSLv
-               [NP [ein Buch;a book,baseline,roof] ] 
-               [V//V  [\_$_j$] ] ] ] ] ] 
+               [NP [ein Buch,baseline,roof] ]
+               [V//V  [\_$_j$] ] ] ] ] ]
 \end{forest}}
 \caption{\label{fig-English-Danish-German-declerative-main-clause}Deklarative Hauptsätze mit
   Subjekt in Anfangsstellung im \ili{Englisch}en, \ili{Dänisch}en und \ili{Deutsch}en: trotz ähnlicher Erscheinung ist die
@@ -1053,15 +1053,15 @@ die funktionalen Knoten für Adjunkte und ohne die Voranstellung des Objekts zu 
 %where n children=0{delay=with unaligned translation}{}
 sm edges
 [CP
-	[C$^0$[weil;because, tier=word]]
+	[C$^0$[weil, tier=word]]
 %	\[TopP
 %		[DP$_j$ [diese Sonate;this sonata]]
 		[SubjP
-			[DP$_i$ [der Mann;the man,roof]]
+			[DP$_i$ [der Mann,roof]]
 %			\[ModP
 %				[AdvP [wahrscheinlich;probably,l=20\baselineskip]]
 				[ObjP
-					[DP$_j$ [diese Sonate;this sonata,roof]]
+					[DP$_j$ [diese Sonate,roof]]
 %					\[NegP
 %						[AdvP [nicht;not,tier=word]]
 %						\[AspP
@@ -1069,9 +1069,9 @@ sm edges
 %							\[MannP
 %								[AdvP [gut;well,tier=word]]
 								[AuxP
-									[VP$_k$ [gespielt;played,tier=word]]
+									[VP$_k$ [gespielt,tier=word]]
 									[Aux+
-										[Aux [hat;has,tier=word]]
+										[Aux [hat,tier=word]]
 										[vP
 											[DP$_i$ [,phantom]]
 											[VP$_k$
