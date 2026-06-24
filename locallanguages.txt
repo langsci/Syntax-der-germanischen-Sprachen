@@ -1,0 +1,63 @@
+Afrikaans
+Alemannic
+Anglo-Frisian
+Austronesian
+Bokmål
+Brazilian
+British
+Crimean Gothic
+Danish
+Dano-Norwegian
+Dutch
+East Germanic
+English
+European
+Faroese
+Franconian
+Frankish
+French
+Frisian
+German
+Germanic
+Gothic
+High German
+Icelandic
+Indo
+Indo-European
+Inuit
+Islandic
+Jiddish
+Langobardic
+Latin
+Low German
+Luxembourgish
+Mennonite Low German
+Middle
+Mittelalemannisch
+New-Norwegian
+Nordic
+North Germanic
+Northern
+Norwegian
+Nynorsk
+Old Danish
+Old Norwegian
+Old Swedish
+Pennsylvania Dutch
+Plautdietsch
+Prussian
+Ripuarian
+Romance
+Romania
+Russian
+Saterlandic
+Scandinavian
+Serbian
+Silesian
+Slavic
+Slovak
+Spanish
+Swedish
+Swiss German
+West Germanic
+Yiddish
