@@ -225,8 +225,8 @@ in Abbildung~\vref{fig-ihn-kennt} dargestellt.\footnote{%
 \begin{forest}
 sm edges
 [{V \sliste{ NP[\type{nom}] } }
-  [{NP[\type{acc}]} [ihn;him] ]
-  [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt;knows]] ] ]
+  [{NP[\type{acc}]} [ihn] ]
+  [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt]] ] ]
 \end{forest}}
 \caption{\label{fig-ihn-kennt}Analyse von \emph{ihn kennt}, die Valenzinformation wird in einer Liste repräsentiert}
 \end{figure}
@@ -245,10 +245,10 @@ zeigt den nächsten Schritt, bei dem \emph{ihn kennt} mit dem Subjekt \emph{niem
 \begin{forest}
 sm edges
 [V \eliste
-  [{NP[\type{nom}]} [niemand;nobody] ]
+  [{NP[\type{nom}]} [niemand] ]
   [{V \sliste{ NP[\type{nom}] } }
-    [{NP[\type{acc}]} [ihn;him] ]
-    [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt;knows]] ] ]
+    [{NP[\type{acc}]} [ihn] ]
+    [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt]] ] ]
 \end{forest}}
 \caption{\label{fig-niemand-ihn-kennt}Analyse von (\emph{dass}) \emph{niemand ihn kennt}}
 \end{figure}
@@ -333,10 +333,10 @@ Abbildung~\vref{fig-scrambling-German} zeigt die Analyse von (\mex{1}).
 \begin{forest}
 sm edges
 [{V \eliste}
-   [{NP[\type{acc}]} [ihn;him] ]
+   [{NP[\type{acc}]} [ihn] ]
    [{V \sliste{ NP[\type{acc}] } }
-      [{NP[\type{nom}]} [niemand;nobody] ]
-      [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt;knows] ] ] ]
+      [{NP[\type{nom}]} [niemand] ]
+      [{V \sliste{ NP[\type{nom}], NP[\type{acc}] }} [kennt] ] ] ]
 \end{forest}}
 \caption{\label{fig-scrambling-German}Analyse von (\emph{dass}) \emph{ihn niemand kennt};
   Sprachen, die Scrambling erlauben, gestatten die Sättigung von Argumenten in beliebiger Reihenfolge}
@@ -496,13 +496,13 @@ Abbildung~\vref{fig-spr-german} zeigt die angepasste Analyse von
 \begin{forest}
 sm edges
 [{V[\spr \eliste, \comps \eliste]}, name=S
-        [{NP[\type{nom}]} [niemand;nobody] ]
+        [{NP[\type{nom}]} [niemand] ]
         [{V\feattab{
               \spr \eliste, \comps \sliste{ NP[\type{nom}] } }}, name = Vs
-          [{NP[\type{acc}]} [ihn;him] ] 
+          [{NP[\type{acc}]} [ihn] ]
           [V\feattab{
               \spr \eliste,\\
-              \comps \sliste{ NP[\type{nom}], NP[\type{acc}]}} [kennt;knows] ]
+              \comps \sliste{ NP[\type{nom}], NP[\type{acc}]}} [kennt] ]
 ] ]
 \node [right=4cm] at (S)
     {
@@ -824,10 +824,10 @@ Die Strukturen, die durch das Kopf-Komplement-Schema ohne jegliche Beschränkung
 sm edges
 [{V[\comps \sliste{ }]},s sep+=1em
   [{V[\comps \sliste{ \ibox{1} }]}
-    [\ibox{2} \npdat [dem Kind;the child,roof]]
-    [{V[\comps \sliste{ \ibox{2}, \ibox{1} }]} [\ibox{3} \npnom [niemand;nobody]]
-       [{V[\comps \sliste{ \ibox{3}, \ibox{2}, \ibox{1} }]}  [vorliest;\textsc{part}.reads]]]]
-  [\ibox{1} \npacc [ein Buch;a book,roof]]]]
+    [\ibox{2} \npdat [dem Kind,roof]]
+    [{V[\comps \sliste{ \ibox{2}, \ibox{1} }]} [\ibox{3} \npnom [niemand]]
+       [{V[\comps \sliste{ \ibox{3}, \ibox{2}, \ibox{1} }]}  [vorliest]]]]
+  [\ibox{1} \npacc [ein Buch,roof]]]]
 \end{forest}
 \caption{\label{fig-dem-kind-niemand-gab-ein-buch-head-comp}Unerwünschte Analyse mit dem
   Kopf-Komplement-Schema ohne Linearisierungsbeschränkungen}
@@ -837,10 +837,10 @@ sm edges
 sm edges
 [{V[\comps \sliste{ }]}
   [{V[\comps \sliste{ \ibox{1} }]},s sep+=1em
-    [{V[\comps \sliste{ \ibox{2}, \ibox{1} }]} [\ibox{3} \npnom [niemand;nobody]]
-       [{V[\comps \sliste{ \ibox{3}, \ibox{2}, \ibox{1} }]}  [vorliest;\textsc{part}.reads]]]
-    [\ibox{2} \npdat [dem Kind;the child,roof]]] 
-  [\ibox{1} \npacc [ein Buch;a book,roof]]]]
+    [{V[\comps \sliste{ \ibox{2}, \ibox{1} }]} [\ibox{3} \npnom [niemand]]
+       [{V[\comps \sliste{ \ibox{3}, \ibox{2}, \ibox{1} }]}  [vorliest]]]
+    [\ibox{2} \npdat [dem Kind,roof]]]
+  [\ibox{1} \npacc [ein Buch,roof]]]]
 \end{forest}
 \caption{\label{fig-niemand-gab-dem-kind-ein-buch-head-comp}Unerwünschte Analyse mit dem
   Kopf-Komplement-Schema ohne Linearisierungsbeschränkungen}
@@ -1006,21 +1006,21 @@ erlauben keinen Wechsel der Rektionsrichtung, wie er im \ili{Jiddisch}en möglic
 dat V acc
 
 sukhr habn unzri bridr gigebn fil gelt  
-merchants have our brothers given much money
-'Merchants gave our brothers much money'
+Kaufleute haben unseren Brüdern gegeben viel Geld
+'Kaufleute gaben unseren Brüdern viel Geld'
 (1692E-VILNA,217.134)
 
 drum hat er dem menshn gebn di turh ... 
-'therefore has he the people given the Torah'
+'deshalb hat er dem Volk die Tora gegeben'
 (1620E-LEVTOV1,4l.47)
 
 
 V dat acc
 
-hat gibrakht meyn oybrstn alirley shpetsirey '[who] brought my boss all kinds of spices'
+hat gibrakht meyn oybrstn alirley shpetsirey '[der] meinem Chef allerlei Gewürze brachte'
 (1665W-COURT,221.246)
 (2) mer haben unzer formuner gegeben meinem stieffater tsvay hundert gulden
-'our guardians gave my stepfather 200 guilders' (1518W-GOETZ,.137)
+'unsere Vormünder gaben meinem Stiefvater 200 Gulden' (1518W-GOETZ,.137)
 
 
 \fi
@@ -1173,15 +1173,15 @@ in Abbildung~\ref{fig-head-comp} lizenziert.
 \begin{forest}
 sm edges
 [{V[\spr \eliste, \comps \eliste]}, schema
-        [{Adv[\textsc{mod} \ibox{3} V]} [sofort;promptly] ]
+        [{Adv[\textsc{mod} \ibox{3} V]} [sofort] ]
         [{\ibox{3} V[\spr \eliste, \comps \eliste]}
-          [{\ibox{1} NP[\type{nom}]} [jeder;everybody] ]
+          [{\ibox{1} NP[\type{nom}]} [jeder] ]
           [V\feattab{
               \spr \sliste{ }, \comps \sliste{ \ibox{1} } }
-            [{\ibox{2} NP[\type{acc}]} [das Buch;the book, roof] ] 
+            [{\ibox{2} NP[\type{acc}]} [das Buch, roof] ]
             [V\feattab{
               \spr \sliste{  },\\
-              \comps \sliste{ \ibox{1}, \ibox{2} }} [liest;reads] ] ]
+              \comps \sliste{ \ibox{1}, \ibox{2} }} [liest] ] ]
 ] ]
 \end{forest}}
 \caption{\label{fig-m-j-b-l}Analyse von [\emph{dass}] \emph{sofort jeder das Buch liest},
@@ -1194,16 +1194,16 @@ sm edges
 \begin{forest}
 sm edges
 [{V[\spr \eliste, \comps \eliste]},s sep+=1.5em
-          [{\ibox{1} NP[\type{nom}]} [jeder;everybody] ]
+          [{\ibox{1} NP[\type{nom}]} [jeder] ]
           [V\feattab{
               \spr \sliste{ }, \comps \sliste{ \ibox{1} } }, schema
-            [{Adv[\textsc{mod} \ibox{3} V]} [sofort;promptly] ]
+            [{Adv[\textsc{mod} \ibox{3} V]} [sofort] ]
             [\ibox{3} V\feattab{
                 \spr \sliste{ }, \comps \sliste{ \ibox{1} } }
-              [{\ibox{2} NP[\type{acc}]} [das Buch;the book, roof] ] 
+              [{\ibox{2} NP[\type{acc}]} [das Buch, roof] ]
               [V\feattab{
                 \spr \sliste{  },\\
-                \comps \sliste{ \ibox{1}, \ibox{2} }} [liest;reads] ] ]
+                \comps \sliste{ \ibox{1}, \ibox{2} }} [liest] ] ]
 ] ]
 \end{forest}}
 
@@ -1217,17 +1217,17 @@ sm edges
 \begin{forest}
 sm edges
 [{V[\spr \eliste, \comps \eliste]}
-    [{\ibox{1} NP[\type{nom}]} [jeder;everybody] ]
+    [{\ibox{1} NP[\type{nom}]} [jeder] ]
       [V\feattab{
          \spr \eliste, \comps \sliste{ \ibox{1} } }, s sep+=1em
-         [{\ibox{2} NP[\type{acc}]} [das Buch;the book, roof] ] 
+         [{\ibox{2} NP[\type{acc}]} [das Buch, roof] ]
            [V\feattab{
               \spr \eliste,\\
-              \comps \sliste{ \ibox{1}, \ibox{2} }}, schema 
-             [{Adv[\textsc{mod} \ibox{3} V]} [sofort;promptly] ]
+              \comps \sliste{ \ibox{1}, \ibox{2} }}, schema
+             [{Adv[\textsc{mod} \ibox{3} V]} [sofort] ]
              [\ibox{3} V\feattab{
                  \spr \eliste,\\
-                 \comps \sliste{ \ibox{1}, \ibox{2} }} [liest;reads] ] ] ] ]
+                 \comps \sliste{ \ibox{1}, \ibox{2} }} [liest] ] ] ] ]
 \end{forest}}
 \caption{\label{fig-j-b-m-l}Analyse von [\emph{dass}] \emph{jeder das Buch sofort liest},
   wobei sich das Adjunkt zwischen Objekt und Verb anlagert}
@@ -1332,10 +1332,10 @@ Adjunkttochter in das Schema eintreten, und ungrammatische Sätze wie (\mex{0}b)
 \begin{forest}
 sm edges
 [{V[\comps \eliste]}, s sep+=.5em
-  [\ibox{1} NP [jeder;everybody]]
+  [\ibox{1} NP [jeder]]
   [{V[\comps \sliste{ \ibox{1} }]} ,schema
-    [{NP[\textsc{mod} \ibox{2} V]} [eine Stunde;one hour,roof]]
-    [{\ibox{2} V[\comps \sliste{ \ibox{1} }]}  [liest;reads]]]]
+    [{NP[\textsc{mod} \ibox{2} V]} [eine Stunde,roof]]
+    [{\ibox{2} V[\comps \sliste{ \ibox{1} }]}  [liest]]]]
 \end{forest}
 \caption{Analyse einer adverbialen NP in \emph{dass jeder eine Stunde liest}}\label{fig-dass-Aicke-eine-Stunde-liest}
 \end{figure}
@@ -1483,21 +1483,21 @@ b. & \emph{liest}: & \argst \sliste{ NP[\type{nom}] } \\[2mm] %& \sliste{ NP[\ty
 \begin{forest}
 sm edges
 [{V[\comps \eliste]}
-   [{NP[\type{nom}]} [Kirby;Kirby] ]
+   [{NP[\type{nom}]} [Kirby] ]
    [V\feattab{
       \comps \sliste{ NP[\type{nom}] } }
-     [{NP[\type{acc}]} [das Buch;the book,roof] ]
+     [{NP[\type{acc}]} [das Buch,roof] ]
      [V\feattab{
-         \comps \sliste{ NP[\type{nom}], NP[\type{acc}] }} [liest;reads] ] ] ]
+         \comps \sliste{ NP[\type{nom}], NP[\type{acc}] }} [liest] ] ] ]
 \end{forest}}
 \hfill
 \scalebox{.8}{%
 \begin{forest}
 sm edges
 [{V[\comps \eliste]}
-   [{NP[\type{nom}]} [Kirby;Kirby] ]
+   [{NP[\type{nom}]} [Kirby] ]
    [V\feattab{
-      \comps \sliste{ NP[\type{nom}] }} [liest;reads] ] ]
+      \comps \sliste{ NP[\type{nom}] }} [liest] ] ]
 \end{forest}}
 \hfill\mbox{}
 \caption{\label{fig-svo}Analyse von Sätzen mit zweiwertigem und einwertigem \emph{reads}}
@@ -1533,11 +1533,11 @@ und Abbildung~\ref{fig-keep-optional-arguments} dargestellt.
 \begin{forest}
 sm edges
 [{V[\comps \eliste]}
-   [{NP[\type{nom}]} [Kirby;Kirby] ]
+   [{NP[\type{nom}]} [Kirby] ]
    [V\feattab{
       \comps \sliste{ NP[\type{nom}, \textsc{opt}$-$] } }
      [V\feattab{
-         \comps \sliste{ NP[\type{nom}, \textsc{opt}$-$], NP[\type{acc}, \textsc{opt}$+$] }} [liest;reads] ]
+         \comps \sliste{ NP[\type{nom}, \textsc{opt}$-$], NP[\type{acc}, \textsc{opt}$+$] }} [liest] ]
          ] ]
 \end{forest}}}
 \caption{\label{fig-schema-for-optional-arguments}Analyse mit unär verzweigender Konstruktion zum Abbinden eines optionalen Arguments}
@@ -1549,9 +1549,9 @@ sm edges
 \begin{forest}
 sm edges
 [{V[\comps \nliste{ NP[\type{acc}, \textsc{opt}$+$] }]}
-   [{NP[\type{nom}]} [Kirby;Kirby] ]
+   [{NP[\type{nom}]} [Kirby] ]
    [V\feattab{
-     \comps \nliste{ NP[\type{nom}, \textsc{opt}$-$], NP[\type{acc}, \textsc{opt}$+$] }} [liest;reads] ]
+     \comps \nliste{ NP[\type{nom}, \textsc{opt}$-$], NP[\type{acc}, \textsc{opt}$+$] }} [liest] ]
       ]
 \end{forest}}}
 \caption{\label{fig-keep-optional-arguments}Analyse ohne Abbinden optionaler Argumente}
@@ -1620,15 +1620,15 @@ dass jeder dieses Buch kennt
 sm edges
 [CP
   [C\rlap{$'$}
-    [C [dass;that]]
+    [C [dass]]
     [TP
-      [NP [jeder;everybody,roof]]
+      [NP [jeder,roof]]
       [T\rlap{$'$}
 	[VP
 	  [V\rlap{$'$}
-	    [NP [dieses Buch;this book, roof]]
+	    [NP [dieses Buch, roof]]
 	    [V [\trace$_j$]]]]
-	[T [kenn-$_j$ -t;know- -s]]]]]]
+	[T [kenn-$_j$ -t]]]]]]
 \end{forest}
 \caption{\label{fig-cp-tp-vp}Satz im CP/TP/VP-Modell}
 \end{figure}%
@@ -1666,17 +1666,17 @@ Abbildung~\ref{fig-cp-tp-vp-scrambling}.\footnote{%
 sm edges
 [CP
 [C\rlap{$'$}
-	[C [dass;that]]
+	[C [dass]]
         [TP
-          [NP$_i$ [dieses Buch;this book, roof]]
+          [NP$_i$ [dieses Buch, roof]]
 	  [TP
-	    [NP [jeder;everybody,roof]]
+	    [NP [jeder,roof]]
 	    [T\rlap{$'$}
 	      [VP
 		[V\rlap{$'$}
 		  [NP [\trace$_i$]]
 		  [V [\trace$_j$]]]]
-	      [T [kenn-$_j$ -t;know- -s]]]]]]]
+	      [T [kenn-$_j$ -t]]]]]]]
 \end{forest}
 \caption{\label{fig-cp-tp-vp-scrambling}Scrambling muss im CP/TP/VP-Modell Bewegung sein}
 \end{figure}%
@@ -1858,25 +1858,25 @@ eines Kopfes ist, aber sie nehmen keine Subjektphrasen oder Objektphrasen an. F�
 \begin{forest}
 where n children=0{delay=with unaligned translation}{}
 [CP
-	[C$^0$[weil;because, tier=word]]
+	[C$^0$[weil, tier=word]]
 	[TopP
-		[DP$_j$ [diese Sonate;this sonata,tier=below,l=28\baselineskip]]
+		[DP$_j$ [diese Sonate,tier=below,l=28\baselineskip]]
 		[SubjP
-			[DP$_i$ [der Mann;the man,tier=word]]
+			[DP$_i$ [der Mann,tier=word]]
 			[ModP
-				[AdvP [wahrscheinlich;probably,l=18\baselineskip]]
+				[AdvP [wahrscheinlich,l=18\baselineskip]]
 				[ObjP
-					[DP$_j$ [diese Sonate;this sonata,tier=below]]
+					[DP$_j$ [diese Sonate,tier=below]]
 					[NegP
-						[AdvP [nicht;not,tier=word]]
+						[AdvP [nicht,tier=word]]
 						[AspP
-							[AdvP [oft;often,tier=word]]
+							[AdvP [oft,tier=word]]
 							[MannP
-								[AdvP [gut;well,tier=word]]
+								[AdvP [gut,tier=word]]
 								[AuxP
-									[VP$_k$ [gespielt;played,tier=word]]
+									[VP$_k$ [gespielt,tier=word]]
 									[Aux+
-										[Aux [hat;has,tier=word]]
+										[Aux [hat,tier=word]]
 										[vP
 											[DP$_i$]
 											[VP$_k$
