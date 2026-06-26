@@ -45,7 +45,7 @@
 
 % used to be in this package
 \providecommand{\citegen}{}
-\renewcommand{\citegen}[2][]{\citeauthor{#2}'s (\citeyear*[#1]{#2})}
+\renewcommand{\citegen}[2][]{\citeauthor{#2}s (\citeyear*[#1]{#2})}
 \providecommand{\lsptoprule}{}
 \renewcommand{\lsptoprule}{\midrule\toprule}
 \providecommand{\lspbottomrule}{}
@@ -139,7 +139,7 @@
 
 
 % has to be loaded after forest-setup because of incompatibilities with the dg-style.
-\usepackage{german}\selectlanguage{USenglish}
+\usepackage{german}
 
 \usepackage{./styles/merkmalstruktur,./styles/abbrev,./styles/makros.2020,./styles/my-xspace,./styles/article-ex,./styles/additional-langsci-index-shortcuts,
 ./styles/eng-date,./styles/my-theorems}
