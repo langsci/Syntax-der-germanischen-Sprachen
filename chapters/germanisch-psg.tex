@@ -16,7 +16,7 @@ späteren Kapiteln eine Rolle spielen, aber die lexikalischen Einträge werden w
 sein: Sie werden Valenzinformationen enthalten, die eine entscheidende Rolle bei der Lizenzierung
 syntaktischer Struktur spielen.
 
-Viel Zeit wird auf die Struktur von Nominalphrasen verwendet. Die wesentlichen Einsichten zur Syntax
+Nominalphrasen werden relativ ausführlich besprochen. Die wesentlichen Einsichten zur Syntax
 der deutschen\il{Deutsch} Nominalphrasen lassen sich auf andere germanische\il{Germanisch} Sprachen übertragen. Spätere
 Kapitel werden sich mit den Unterschieden zwischen den germanischen\il{Germanisch} Sprachen bezüglich der Syntax
 auf Satzebene befassen.
@@ -37,15 +37,15 @@ und \emph{gibt} ist ein Verb\is{Verb}.
 \ea\label{bsp-weil-er-das-buch-dem-mann-gibt}
 weil er das Buch dem Kind gibt
 \z
-Mit den in \citew[Abschnitt~1.3]{MuellerGT-Eng5} eingeführten Konstituententests lässt sich zeigen, dass
+Mit den in \citew[Abschnitt~1.3]{MuellerLehrbuch4} eingeführten Konstituententests lässt sich zeigen, dass
 einzelne Wörter ebenso wie die Zeichenketten \emph{das Buch} und \emph{dem Kind}
 Konstituenten bilden. Diesen werden dann bestimmte Symbole zugewiesen. Da Nomen einen wichtigen Teil
 der Phrasen \emph{das Buch} und \emph{dem Kind} bilden, werden diese als \emph{Nominalphrasen} oder
-kurz NPs bezeichnet. Das Pronomen \emph{er} kann an denselben Stellen wie volle NPs auftreten und kann
-daher auch der Kategorie NP zugeordnet werden.
+kurz NPs bezeichnet. Das Pronomen \emph{er} kann an denselben Stellen wie volle NPs auftreten,
+weshalb man es ebenfalls der Kategorie NP zuordnet.
 
 Die Gruppierung von Konstituenten kann man sich mithilfe von Kästen veranschaulichen und darstellen. Zum Beispiel kann \emph{er das
-  Buch dem Kind gibt} wie in Abbildung~\ref{fig-boxes} dargestellt werden.
+  Buch dem Kind gibt} wie in Abbildung~\ref{fig-boxes} dargestellt werden.\todostefan{Beispiele aus HPSG-Buch}
 \begin{figure}
 \centering
 \TZbox{%
@@ -99,9 +99,9 @@ Abbildung~\ref{fig-boxes-pos} dargestellt.
        \end{tabular}}}
 \caption{\label{fig-boxes-pos}Wörter und Phrasen in Kästen mit Wortartetiketten}
 \end{figure}
-Kästen mit denselben Etiketten können durch andere Kästen mit demselben Etikett ersetzt werden. Zum Beispiel kann der Kasten
+Kästen mit denselben Beschriftungen können durch andere Kästen mit denselben Beschriftungen ersetzt werden. Zum Beispiel kann der Kasten
 für \emph{dem Kind} durch \emph{dem Mädchen} ersetzt werden. \emph{Er} kann
-durch \emph{das Mädchen} ersetzt werden. Das ist sehr intuitiv, aber es ist besser, ein Werkzeug zu haben,
+durch \emph{das Mädchen} ersetzt werden. Das ist sehr intuitiv, aber es ist besser, ein Verfahren zu haben,
 mit dem man tatsächlich Strukturen ableiten kann, die sich als solche Kästen oder als syntaktische
 Bäume darstellen lassen, wie man sie aus Einführungskursen kennt. Daher werden wir uns jetzt mit
 Phrasenstrukturgrammatiken befassen.
@@ -143,6 +143,7 @@ zum Beispiel in Zeile~2 \emph{er} durch NP ersetzt.
 Wenn zwei oder mehr Symbole gemeinsam auf der rechten Seite einer Regel vorkommen, dann werden alle
 diese Wörter durch das Symbol auf der linken Seite ersetzt. Das geschieht in den Zeilen 5, 8 und 10. So
 werden zum Beispiel in den Zeilen 5 und 8 Det und N zu NP umgeschrieben.
+
 %\begin{figure}
 \ea
 %\oneline
@@ -163,6 +164,8 @@ werden zum Beispiel in den Zeilen 5 und 8 Det und N zu NP umgeschrieben.
 \end{tabular}}
 \z
 %\vspace{-\baselineskip}\end{figure}%
+
+\noindent
 In (\mex{0}) sind wir mit einer Wortkette gestartet, und es wurde gezeigt, dass wir die Struktur eines Satzes ableiten können, indem wir die Regeln
 einer gegebenen Phrasenstrukturgrammatik anwenden. Wir hätten dieselben Schritte auch in umgekehrter Reihenfolge anwenden können: Ausgehend
 vom Satzsymbol S hätten wir die Schritte~9--1 angewendet und wären bei der Wortkette angekommen.
@@ -212,7 +215,9 @@ wie in (\mex{1}).
 \z
 Trotzdem sind es die grammatischen Regeln/""Schemata, die eigentlich wichtig sind, da diese grammatisches Wissen darstellen, das unabhängig von spezifischen Strukturen ist.
 Auf diese Weise können wir die Grammatik in (\ref{bsp-grammatik-psg}) verwenden, um den Satz
-in (\mex{1}) zu analysieren oder zu generieren, der sich von (\ref{bsp-weil-er-das-buch-dem-mann-gibt}) in der Abfolge der Objekte unterscheidet:
+in (\mex{1}) zu analysieren oder zu generieren, der sich von
+(\ref{bsp-weil-er-das-buch-dem-mann-gibt}) in der Abfolge der Objekte
+unterscheidet:\todostefan{Beispiele aus HPSG-Buch nehmen}
 \ea
 (weil) er dem Kind das Buch gibt
 \z
@@ -239,7 +244,7 @@ V  & $\to$ NP V\\
 {V} & {$\to$ gibt}\\
 \end{tabular}
 \z
-Diese Grammatik lizenziert nur binär verzweigende Strukturen, wie in Abbildung~\vref{er-das-buch-dem-mann-gibt-bin} gezeigt.
+Diese Grammatik lizenziert nur binär verzweigende Strukturen wie die in Abbildung~\vref{er-das-buch-dem-mann-gibt-bin}.
 \begin{figure}
 \centerline{
 \begin{forest}
@@ -269,7 +274,7 @@ Grammatik aufnehmen, dann würde die Grammatik fälschlicherweise
 die ungrammatischen Sätze in (\mex{1}b--d) lizenzieren:\footnote{\label{fn-ex-das-kind-erwartet}%
 	Mit der Grammatik in (\ref{psg-binaer}) haben wir außerdem das zusätzliche Problem, dass wir nicht bestimmen können, wann eine Äußerung vollständig ist,
 	da das Symbol V für alle Kombinationen von V und NP verwendet wird. Daher können wir mit dieser Grammatik auch
-        die Sätze in (i) analysieren, sofern wir die entsprechenden Wörter ins Lexikon aufnehmen:
+        die Sätze in (i) analysieren, wenn wir die entsprechenden Wörter ins Lexikon aufnehmen:
 
 \eal
 \ex[*]{
@@ -279,7 +284,7 @@ der Delphin erwartet
 des Kindes er das Buch dem Kind gibt
 }
 \zl
-Die Anzahl der von einem Verb geforderten Argumente muss irgendwie in der Grammatik repräsentiert werden. In Kapitel~\ref{chap-valence} werden wir genau sehen,
+Die Anzahl und Art der von einem Verb geforderten Argumente muss irgendwie in der Grammatik repräsentiert werden. In Kapitel~\ref{chap-valence} werden wir genau sehen,
 wie die Selektion von Argumenten durch ein Verb (Valenz) in HPSG erfasst wird.
 }
 \eal
@@ -290,7 +295,7 @@ er das Buch dem Kind gibt
 ich das Buch dem Kind gibt
 }
 \ex[*]{
-er das Buch den Kind gibt
+er das Buch den Kind gibt\todostefan{Fehler im Original durch Ersetzung von Mann durch Kind}
 }
 \ex[*]{
 er den Buch dem Kind gibt
@@ -935,8 +940,8 @@ Im \ili{Englisch}en muss oft das Pronomen
   Pronomen \emph{one}.
 } aber im \ili{Deutsch}en wird das Nomen\is{Nomen}
 einfach weggelassen.
-%\todostefan{ich habe hier mit absicht ``often'' hinzugefügt, weil in den obengenannten beispielen
-%man nicht in allen Fällen ``one'' benutzen kann, vgl. (\mex{0}c)}
+%\todostefan{ich habe hier mit absicht "`often"' hinzugefügt, weil in den obengenannten beispielen
+%man nicht in allen Fällen "`one"' benutzen kann, vgl. (\mex{0}c)}
 In Phrasenstrukturgrammatiken kann dies durch eine so"=genannte \emph{Epsilon-Produktion}\is{Epsilon-Produktion}\is{leeres Element} beschrieben werden.
 Diese Regeln ersetzen ein Symbol durch nichts (\mex{1}a). Die Regel in (\mex{1}b) ist eine äquivalente Variante, die für den Begriff \emph{Epsilon-Produktion} verantwortlich ist:
 \eal
