@@ -137,7 +137,7 @@ einem Determinator (Det) und einem Nomen (N) bestehen kann.
 
 Wir können den Satz in (\mex{-1}) mit der Grammatik in (\mex{0}) folgendermaßen analysieren:
 Zunächst nehmen wir das erste Wort des Satzes und prüfen, ob es eine Regel gibt, in der dieses Wort auf der rechten
-Seite der Regel vorkommt. Ist dies der Fall, dann ersetzen wir das Wort durch das Symbol auf der linken Seite der Regel. Das geschieht
+Seite der Regel vorkommt. Ist das der Fall, dann ersetzen wir das Wort durch das Symbol auf der linken Seite der Regel. Das geschieht
 in den Zeilen 2--4, 6--7 und 9 der Ableitung in (\mex{1}). So wird
 zum Beispiel in Zeile~2 \emph{er} durch NP ersetzt.
 Wenn zwei oder mehr Symbole gemeinsam auf der rechten Seite einer Regel vorkommen, dann werden alle
@@ -173,7 +173,7 @@ Indem man andere Regeln aus der Grammatik zum Umschreiben der Symbole auswählt,
 von S zur Kette \emph{er dem Kind das Buch gibt} gelangen.
 Wir können sagen, dass diese Grammatik eine Menge von Sätzen lizenziert (oder generiert)\label{Seite-generiert}.\is{Generative Grammatik}
 
-Die Ableitung in (\mex{0}) kann auch als Baum dargestellt werden. Dies zeigt Abbildung~\vref{er-das-buch-dem-mann-gibt-flat}.
+Die Ableitung in (\mex{0}) kann auch als Baum dargestellt werden. Das zeigt Abbildung~\vref{er-das-buch-dem-mann-gibt-flat}.
 \begin{figure}
 \centerline{
 \begin{forest}
@@ -307,22 +307,22 @@ weil zwischen Determinator und Nomen keine Kongruenz besteht. Es ist nicht mögl
 und \emph{Buch} zu kombinieren, weil \emph{Buch} Neutrum ist. Da die Genusmerkmale
 dieser beiden Elemente nicht übereinstimmen, können die Elemente nicht kombiniert werden.
 
-Im Folgenden werden wir überlegen, wie wir unsere Grammatik ändern müssten, um sie daran zu hindern, die Sätze in (\mex{0}b--d) zu lizenzieren.
+Im Folgenden wird überlegt, wie die Grammatik geändert werden müsste, um sie daran zu hindern, die Sätze in (\mex{0}b--d) zu lizenzieren.
 Wenn wir die Subjekt-Verb-Kongruenz erfassen wollen, dann müssen wir die folgenden sechs Fälle im \ili{Deutsch}en abdecken, da das Verb mit dem
 Subjekt sowohl in Person\is{Person} (1, 2, 3) als auch in Numerus\is{Numerus} (Sg, Pl) kongruieren muss\is{Kongruenz}:
 \eal\jamwidth=7cm\relax%\settowidth\jamwidth{(3, sg)}
 \ex
-Ich schlafe. \jambox{(1, sg)}
+Ich schlafe. \jambox{(1, Sg)}
 \ex
-Du schläfst. \jambox{(2, sg)}
+Du schläfst. \jambox{(2, Sg)}
 \ex
-Er/sie/es schläft. \jambox{(3, sg)}
+Er/sie/es schläft. \jambox{(3, Sg)}
 \ex
-Wir schlafen. \jambox{(1, pl)}
+Wir schlafen. \jambox{(1, Pl)}
 \ex
-Ihr schlaft. \jambox{(2, pl)}
+Ihr schlaft. \jambox{(2, Pl)}
 \ex
-Sie schlafen. \jambox{(3, pl)}
+Sie schlafen. \jambox{(3, Pl)}
 \zl
 Es ist möglich, diese Beziehungen mit grammatischen Regeln zu erfassen, indem man
 die Anzahl der verwendeten Symbole erhöht. Statt der Regel S $\to$ NP NP NP V können wir
@@ -339,7 +339,7 @@ S  & $\to$ NP\_3\_pl & NP & NP & V\_3\_pl\\
 \z
 Das würde bedeuten, dass wir jeweils sechs verschiedene Symbole für Nominalphrasen und Verben benötigen sowie sechs Regeln statt einer.\is{Kongruenz|)}
 
-Um die Kasus\isi{Kasus}zuweisung durch das Verb zu erfassen, können wir Kasusinformationen auf analoge Weise in die Symbole aufnehmen. Wir würden dann
+Um die Kasuszuweisung\is{Kasus} durch das Verb zu erfassen, können wir Kasusinformationen auf analoge Weise in die Symbole aufnehmen. Wir würden dann
 Regeln wie die folgenden erhalten:
 \ea
 \label{ditrans-ps-regeln}
@@ -374,8 +374,8 @@ den atomaren Symbolen enthalten, \zb `nom\_dat\_acc'.
 
 Um die Determinator-Nomen-Kongruenz\is{Kongruenz|(} in (\mex{1}) zu erfassen, müssen wir Informationen über Genus\is{Genus} (fem, mas, neu),
 Numerus\is{Numerus} (Sg, Pl), Kasus\is{Kasus} (Nom, Gen, Dat, Akk) und die Flexionsklassen (stark, schwach) aufnehmen.\footnote{%
-Dies sind Flexionsklassen für Adjektive, die auch für einige Nomen wie \emph{Beamter},
-\emph{Verwandter}, \emph{Gesandter} relevant sind.
+Diese Flexionsklassen für Adjektive sind auch für einige Nomen wie \emph{Beamter},
+\emph{Verwandter}, \emph{Gesandter} relevant.
 %For more on adjective classes see page~\pageref{page-Flexionsklasse-Wunderlich}.%
 }
 \eal\settowidth\jamwidth{(Inflectional class)}
@@ -393,7 +393,7 @@ Statt der Regel NP $\to$ Det N müssen wir Regeln wie die in (\mex{1}) verwenden
   Um die Dinge einfach zu halten, enthalten diese Regeln keine Information bezüglich der Flexionsklasse.
 }
 (\mex{1}) zeigt die Regeln für Nominalphrasen im Nominativ. Wir würden analoge Regeln für Genitiv,
-Dativ und Akkusativ benötigen. Wir würden dann 24 Symbole für Determinatoren ($3*2*4$), 24 Symbole für Nomen und
+Dativ und Akkusativ benötigen. Wir würden also 24 Symbole für Determinatoren ($3*2*4$), 24 Symbole für Nomen und
 24 Regeln statt einer benötigen. Wenn die Flexionsklasse berücksichtigt wird, verdoppelt sich die Anzahl der Symbole und die
 Anzahl der Regeln.\is{Kongruenz|)}
 \ea
@@ -417,7 +417,7 @@ NP\_3\_pl\_nom  & $\to$ Det\_neu\_pl\_nom & N\_neu\_pl\_nom \\
 \label{sec-PSG-Merkmale}
 
 Phrasenstrukturgrammatiken, die nur atomare Symbole verwenden, sind problematisch, da sie bestimmte Generalisierungen nicht erfassen können.
-Wir als Linguisten können erkennen, dass NP\_3\_sg\_nom für eine Nominalphrase steht, weil es die Buchstaben NP enthält.
+Wir als Linguist*innen können erkennen, dass NP\_3\_sg\_nom für eine Nominalphrase steht, weil es die Buchstaben NP enthält.
 In formaler Hinsicht ist dieses Symbol jedoch genauso wie jedes andere Symbol in der Grammatik, und wir können die Gemeinsamkeiten
 aller für NPs verwendeten Symbole nicht erfassen. Ferner erfassen unstrukturierte Symbole nicht die Tatsache, dass die Regeln in (\mex{0})
 alle etwas gemeinsam haben. In formaler Hinsicht ist das Einzige, was die Regeln gemeinsam haben, dass es ein Symbol auf der
@@ -425,8 +425,8 @@ linken Seite der Regel und zwei auf der rechten gibt.
 
 Wir können dieses Problem lösen, indem wir Merkmale einführen, die den Kategoriesymbolen zugewiesen werden und es daher erlauben, die Werte
 solcher Merkmale in unsere Regeln aufzunehmen. Zum Beispiel können wir die Merkmale Person, Numerus und Kasus für das Kategoriesymbol
-NP annehmen. Für Determinatoren und Nomen würden wir ein zusätzliches Merkmal für Genus und eines für
-die Flexionsklasse annehmen. (\mex{1}) zeigt zwei Regeln, die um die jeweiligen Werte in Klammern ergänzt sind:\footnote{%
+NP annehmen. Für Determinatoren und Nomen nehmen wir ein zusätzliches Merkmal für Genus und eines für
+die Flexionsklasse an. (\mex{1}) zeigt zwei Regeln, die um die jeweiligen Werte in Klammern ergänzt sind:\footnote{%
   In den folgenden Kapiteln werden Merkmal-Wert-Strukturen verwendet. In diesen Strukturen haben wir immer
 Paare aus einem Merkmalnamen und einem Merkmalwert. In einem solchen Rahmen ist die Reihenfolge der Werte nicht
 wichtig, da jeder Wert durch den entsprechenden Merkmalnamen eindeutig identifiziert wird. Da wir in Schemata wie (\mex{0}) keinen Merkmalnamen
@@ -440,7 +440,7 @@ NP(3,sg,nom)  & $\to$ Det(mas,sg,nom) N(mas,sg,nom)\\
 \end{tabular}
 \z
 %\largerpage
-Würden wir Variablen statt der Werte in (\mex{0}) verwenden, so erhielten wir Regelschemata wie das
+Wenn wir Variablen statt der Werte in (\mex{0}) verwenden, so erhalten wir Regelschemata wie das
 in (\mex{1}):
 \ea
 \label{Regel-mit-Variablen}
@@ -449,7 +449,7 @@ NP({3},{Num},{Case}) & $\to$ & Det(Gen,{Num},{Case}) N(Gen,{Num},{Case})\\
 \end{tabular}
 \z
 Die Werte der Variablen sind hier nicht wichtig. Wichtig ist, dass sie übereinstimmen. Damit
-dies funktioniert, ist es wichtig, dass die Werte geordnet sind; das heißt, in der Kategorie eines Determinators steht das Genus immer an erster Stelle, der Numerus
+das funktioniert, ist es wichtig, dass die Werte geordnet sind; das heißt, in der Kategorie eines Determinators steht das Genus immer an erster Stelle, der Numerus
 an zweiter und so weiter. Der Wert des Personmerkmals (die erste Position in der NP(3,Num,Case)) wird durch die Regel auf `3' festgelegt. Diese
 Art von Beschränkungen der Werte kann natürlich im Lexikon festgelegt werden:
 \ea
@@ -650,8 +650,9 @@ werden wir auch Präpositionalphrasen besprechen.
 \label{sec-psg-np}
 
 %\largerpage
-Bislang haben wir eine relativ einfache Struktur für Nominalphrasen angenommen: Unsere Regeln besagen, dass eine Nominalphrase aus einem Determinator und einem
-Nomen besteht. Nominalphrasen können eine deutlich komplexere Struktur als (\mex{1}a) haben. Das zeigen die folgenden Beispiele in (\mex{1}):
+Bislang wurde eine relativ einfache Struktur für Nominalphrasen angenommen: Unsere Regeln besagen, dass eine Nominalphrase aus einem Determinator und einem
+Nomen besteht. Nominalphrasen können aber eine deutlich komplexere Struktur als (\mex{1}a) haben,
+wie die anderen Beispiele in (\mex{1}) zeigen:
 \eal
 \label{Beispiele-NP-Adjunkte}
 \ex
@@ -680,7 +681,7 @@ Die zusätzlichen Elemente in (\mex{0}) sind Adjunkte\is{Adjunkt|(}. Sie schrän
 bezieht. Während sich (\mex{0}a) auf eine Entität bezieht, die die Eigenschaft hat, ein Buch zu sein, muss der Referent von (\mex{0}b)
 zusätzlich die Eigenschaft haben, uns bekannt zu sein.
 
-Unsere bisherigen Regeln für Nominalphrasen kombinierten einfach ein Nomen und einen Determinator und können daher nur zur
+Unsere bisherigen Regeln für Nominalphrasen kombinieren einfach ein Nomen und einen Determinator und können daher nur zur
 Analyse von (\mex{0}a) verwendet werden. Die Frage, vor der wir nun stehen, ist, wie wir diese Regel modifizieren oder welche zusätzlichen Regeln wir
 annehmen müssten, um die anderen Nominalphrasen in (\mex{0}) zu analysieren. Zusätzlich zu Regel (\mex{1}a) könnte man
 eine Regel wie die in (\mex{1}b) vorschlagen.\footnote{%
@@ -711,8 +712,8 @@ Adjektive festzulegen wäre völlig willkürlich. Selbst wenn wir uns für die f
 \ea
 NP $\to$ Det A* N
 \z
-Der Stern\is{*} in (\mex{0}) steht für eine beliebige Anzahl von Iterationen. Daher umfasst (\mex{0}) Regeln ohne Adjektive
-ebenso wie solche mit einem, zwei oder mehr.
+Der Stern\is{*} in (\mex{0}) steht für eine beliebige Anzahl von Wiederholungen. Daher umfasst (\mex{0}) Regeln ohne Adjektive
+ebenso wie solche mit einem, zwei oder mehr Adjektiven.
 
 Das Problem ist, dass laut der Regel in (\mex{0}) Adjektive und Nomen keine Konstituente bilden und wir daher nicht erklären können, warum Koordination
 in (\mex{1}) trotzdem möglich ist:
@@ -738,7 +739,7 @@ Die Regeln in (\mex{1}) erfassen die bislang besprochenen Nominalphrasen mit Adj
 %\largerpage
 \noindent
 Diese Regeln besagen Folgendes: Eine Nominalphrase besteht aus einem Determinator und einem nominalen Element (\nbar). Dieses nominale Element
-kann aus einem Adjektiv und einem nominalen Element (\mex{0}b) bestehen oder nur aus einem Nomen (\mex{0}c). Da \nbar auch auf der rechten Seite
+kann aus einem Adjektiv und einem nominalen Element bestehen (\mex{0}b) oder nur aus einem Nomen (\mex{0}c). Da \nbar auch auf der rechten Seite
 der Regel in (\mex{0}b) steht, können wir diese Regel mehrfach anwenden und so Nominalphrasen mit mehreren Adjektiven wie
 (\ref{Beispiel-alle-weitern-schlagkraeftigen-Argumente}) erfassen. Abbildung~\vref{Abbildung-Adjektive-in-NP} zeigt die Struktur einer Nominalphrase
 ohne Adjektiv und die einer Nominalphrase mit einem oder zwei Adjektiven.
@@ -791,12 +792,12 @@ und auch groß sind. Diese Art von Nominalphrasen kann in Kontexten wie dem folg
 A: Alle grauen Eichhörnchen sind groß.\\
 B: Nein, ich habe ein kleines graues Eichhörnchen gesehen.
 \z
-Wir beobachten, dass dieser Diskurs mit \emph{Aber alle kleinen grauen Eichhörnchen
-  sind krank} und einer entsprechenden Antwort fortgesetzt werden kann. Die Möglichkeit,
+Dieser Diskurs kann mit \emph{Aber alle kleinen grauen Eichhörnchen
+  sind krank} und einer entsprechenden Antwort fortgesetzt werden. Die Möglichkeit,
   noch mehr Adjektive in Nominalphrasen wie \emph{ein kleines graues Eichhörnchen} zu haben,
   wird in unserem Regelsystem in (\mex{-1}) erfasst. In der Regel
   (\ref{NP-Regeln-Adj}) kommt \nbar sowohl auf der linken als auch auf der rechten
-  Seite der Regel vor. Diese Art von Regel wird als \emph{rekursiv}\is{Rekursion} bezeichnet.
+  Regelseite vor. Diese Art von Regel wird \emph{rekursiv}\is{Rekursion} genannt.
 \is{Adjunkt|)}
 
 %\largerpage
@@ -838,7 +839,7 @@ dass Conny dem Kind das Buch \st{gibt} und Aicke der Frau die Schallplatte gibt
 \ex
 be- und ent"=laden
 \zl
-Koordination ist ein komplexes Phänomen. Siehe \citew{AC2021a} für einen Überblick.
+Koordination ist ein komplexes Phänomen. Siehe \citew{HPSGHandbookCoordination} für einen Überblick.
 % Dass in (\mex{-1}) wirklich keine normale symmetrische Koordination vorliegt, sieht man, wenn man
 % (\mex{-1}) mit (\mex{1}) vergleicht:
 % \ea
@@ -902,7 +903,7 @@ sm edges
     [PP [im Gropiusbau,roof ] ] ] ]
 \end{forest}}
 \caption{\label{Abbildung-NP-mit-PP-Argument}Kombination eines Nomens mit dem PP"=Komplement
-  \emph{vom Gleimtunnel} rechts mit einem Adjunkt-PP}
+  \emph{vom Gleimtunnel} rechts mit einer Adjunkt-PP}
 \end{figure}%
 
 %\largerpage
@@ -942,7 +943,7 @@ Im \ili{Englisch}en muss oft das Pronomen
 einfach weggelassen.
 %\todostefan{ich habe hier mit absicht "`often"' hinzugefügt, weil in den obengenannten beispielen
 %man nicht in allen Fällen "`one"' benutzen kann, vgl. (\mex{0}c)}
-In Phrasenstrukturgrammatiken kann dies durch eine so"=genannte \emph{Epsilon-Produktion}\is{Epsilon-Produktion}\is{leeres Element} beschrieben werden.
+In Phrasenstrukturgrammatiken kann das durch eine so"=genannte \emph{Epsilon-Produktion}\is{Epsilon-Produktion}\is{leeres Element} beschrieben werden.
 Diese Regeln ersetzen ein Symbol durch nichts (\mex{1}a). Die Regel in (\mex{1}b) ist eine äquivalente Variante, die für den Begriff \emph{Epsilon-Produktion} verantwortlich ist:
 \eal
 \label{np-epsilon}
@@ -1042,17 +1043,13 @@ sm edges
 %\largerpage
 Es ist nötig, zwei weitere Anmerkungen zu den bislang entwickelten Regeln zu machen: Bisher habe ich
 immer von Adjektiven gesprochen. Es ist jedoch möglich, sehr komplexe Adjektivphrasen in prä"=nominaler Position zu haben.
-Dabei kann es sich um Adjektive mit Komplementen (\mex{1}a,b) oder um adjektivische Partizipien (\mex{1}c,d) handeln:
+Dabei kann es sich um Adjektive mit Komplementen (\mex{1}a,b) oder um adjektivische Partizipien mit Komplementen (\mex{1}c,d) handeln:\todostefan{anpassen}
 
 \eal
-\ex
-der seiner Frau treue Mann
-\ex
-der auf seinen Sohn stolze Mann
-\ex
-der seine Frau liebende Mann
-\ex
-der von seiner Frau geliebte Mann
+\ex der seiner Frau treue Mann
+\ex der auf seinen Sohn stolze Mann
+\ex der seine Frau liebende Mann
+\ex der von seiner Frau geliebte Mann
 \zl
 Vor diesem Hintergrund muss die Regel (\ref{NP-Regeln-Adj}) folgendermaßen modifiziert werden:
 \ea
@@ -1072,7 +1069,7 @@ oder Nomen ohne Komplemente in (\mex{0}c) sowie (\ref{NP-Regeln-Nbar-N}) -- hier
 \z
 Wenn wir diese Regeln anwenden, dann erzeugen wir unär verzweigende Teilbäume, das heißt Bäume mit einer Mutter, die
 nur eine Tochter hat. (Siehe Abbildung~\ref{Abbildung-NP-ohne-Det} für ein Beispiel dafür.) Wenn wir die
-Parallele zu den Kästen aufrechterhalten, würde dies bedeuten, dass es einen Kasten gibt, der einen weiteren Kasten enthält, nämlich denjenigen mit
+Parallele zu den Kästen aufrechterhalten, würde das bedeuten, dass es einen Kasten gibt, der einen weiteren Kasten enthält, nämlich denjenigen mit
 dem relevanten Inhalt.
 
 Im Prinzip hindert uns nichts daran, diese Information direkt in den größeren Kasten zu legen. Statt
@@ -1087,11 +1084,11 @@ der Regeln in (\mex{1}) verwenden wir einfach die Regeln in (\mex{2}):
 \ex \nbar $\to$ Mann
 \zl
 (\mex{0}a) besagt, dass \emph{kluge} dieselben Eigenschaften wie eine volle Adjektivphrase hat, insbesondere, dass es nicht
-mit einem Komplement kombiniert werden kann. Dies ist parallel zur Kategorisierung des Pronomens \emph{er} als NP in den Grammatiken
+mit einem Komplement kombiniert werden kann. Das ist parallel zur Kategorisierung des Pronomens \emph{er} als NP in den Grammatiken
 (\ref{bsp-grammatik-psg}) und (\ref{psg-binaer}).
 
 %\largerpage[2]
-Die Zuweisung der Kategorie \nbar an Nomen, die kein Komplement verlangen, hat den Vorteil, dass wir nicht erklären müssen, warum die Analyse in (\mex{1}b) ebenso möglich ist wie
+Die Zuweisung der Kategorie \nbar an Nomen, die kein Komplement verlangen, hat den Vorteil, dass man nicht erklären muss, warum die Analyse in (\mex{1}b) ebenso möglich ist wie
 (\mex{1}a), obwohl es keinen Bedeutungsunterschied gibt.
 \eal
 \ex
@@ -1101,24 +1098,23 @@ Die Zuweisung der Kategorie \nbar an Nomen, die kein Komplement verlangen, hat d
 ]]]]]
 \zl
 %
-In (\mex{0}a) haben zwei Nomen zu \nbar projiziert und wurden dann durch Koordination verbunden. Das Ergebnis der Koordination
+In (\mex{0}a) wurden zwei Nomen zu \nbar projiziert und dann durch Koordination verbunden. Das Ergebnis der Koordination
 zweier Konstituenten derselben Kategorie ist immer eine neue Konstituente mit dieser Kategorie. Im Fall von (\mex{0}a) ist dies
 ebenfalls \nbar. Diese Konstituente wird dann mit dem Adjektiv und dem Determinator kombiniert. In (\mex{0}b) wurden die Nomen selbst
 koordiniert. Das Ergebnis davon ist immer eine weitere Konstituente, die dieselbe Kategorie wie ihre Teile hat. In diesem Fall
-wäre dies N. Dieses N wird zu \nbar und wird dann mit dem Adjektiv kombiniert. Wären Nomen, die keine Komplemente verlangen,
-als \nbar statt als N kategorisiert, so hätten wir nicht das Problem der unechten
-Ambiguitäten\is{Ambiguität!unechte}.\footnote{
+wäre das N. Dieses N wird zu \nbar und wird dann mit dem Adjektiv kombiniert. Kategorisiert man Nomen, die keine Komplemente verlangen,
+als \nbar statt als N, verschwindet das Problem der unechten Mehrdeutigkeiten\is{Mehrdeutigkeit!unechte}.\footnote{
 Äußerungen in natürlicher Sprache sind oft mehrdeutig. Zum Beispiel hat der folgende Satz zwei
 Lesarten.
 \ea
-Unbekannte haben Mittwochabend bei einer FDP-Wahlkampfveranstaltung mit FDP-Chef Guido Westerwelle Farbbeutel geworfen. (taz, 21.5.2004, p.\,7)
+Unbekannte haben Mittwochabend bei einer FDP-Wahlkampfveranstaltung mit FDP-Chef Guido Westerwelle Farbbeutel geworfen. (taz, 21.5.2004, S.\,7)
 \z
 Die beiden Lesarten entsprechen zwei verschiedenen Strukturen. In der ersten Lesart hängt die \emph{mit}-PP
-an die Wahlkampfveranstaltung an, was bedeutet, dass Guido Westerwelle auf der Veranstaltung war. In der zweiten
+von \emph{Wahlkampfveranstaltung}, \dash Guido Westerwelle war auf der Veranstaltung. In der zweiten
 Lesart modifiziert die PP das Verb \emph{geworfen}, was einer Bedeutung entspricht, in der Guido
-Westerwelle gemeinsam mit Unbekannten Farbbeutel geworfen hat. Das ist normale Ambiguität. Was Linguisten
-üblicherweise vermeiden wollen, ist unechte Ambiguität: Fälle, in denen wir dieselbe Semantik, aber zwei
-verschiedene syntaktische Strukturen haben.
+Westerwelle gemeinsam mit Unbekannten Farbbeutel geworfen hat. Das ist normale Mehrdeutigkeit. Was Linguisten
+üblicherweise vermeiden wollen, ist unechte Mehrdeutigkeit: Fälle, in denen man dieselbe Semantik, aber zwei
+verschiedene syntaktische Strukturen hat.
 }
 Die Struktur in (\mex{1}) zeigt die einzig mögliche Analyse.
 \ea
@@ -1129,14 +1125,14 @@ Die Struktur in (\mex{1}) zeigt die einzig mögliche Analyse.
 \subsection{Präpositionalphrasen}
 \label{Abschnitt-PP-Syntax}
 
-Verglichen mit der Syntax von Nominalphrasen ist die Syntax von Präpositional\is{Präposition|(}phrasen (PPs) relativ geradlinig. PPs bestehen normalerweise
-aus einer Präposition und einer Nominalphrase, deren Kasus durch diese Präposition bestimmt wird. Wir können dies mit der folgenden
-Regel erfassen:
+Verglichen mit der Syntax von Nominalphrasen ist die Syntax von Präpositionalphrasen\is{Präposition|(} (PPs) relativ einfach. PPs bestehen normalerweise
+aus einer Präposition und einer Nominalphrase, deren Kasus durch diese Präposition bestimmt
+wird. Die folgenden Regeln erfassen das:
 \ea
 \label{Regel-PP-einfach}
 PP $\to$ P NP
 \z
-Diese Regel muss natürlich auch Informationen über den Kasus der NP enthalten. Ich habe dies der einfacheren Darstellung halber weggelassen, so wie ich es
+Diese Regel muss natürlich auch Informationen über den Kasus der NP enthalten. Ich habe diese der einfacheren Darstellung halber weggelassen, so wie ich es
 bei den NP"=Regeln und AP"=Regeln oben getan habe.
 
 Die Duden-Grammatik \citep[§~1300]{Duden2005-Authors} bietet Beispiele wie die in (\mex{1}), die zeigen, dass bestimmte Präpositionalphrasen
@@ -1151,7 +1147,7 @@ dazu dienen, den semantischen Beitrag der Präposition näher zu bestimmen, inde
 \ex
 {}[[Mitten] im Urwald] stießen die Forscher auf einen alten Tempel.
 \zl
-Um die Sätze in (\mex{0}a,b) zu analysieren, könnte man die folgenden Regeln in (\mex{1}) vorschlagen:
+Für die Analyse der Sätze in (\mex{0}a,b) könnte man die folgenden Regeln in (\mex{1}) vorschlagen:
 
 \eal
 \ex PP $\to$ NP PP
@@ -1226,7 +1222,7 @@ sm edges
 \caption{\label{Abbildung-PP}Präpositionalphrasen mit und ohne Maßangabe}
 \end{figure}%
 
-An dieser Stelle fragt sich der aufmerksame Leser vermutlich, warum es in der linken Abbildung von
+An dieser Stelle fragt sich die aufmerksame Leser*in vermutlich, warum es in der linken Abbildung von
 Abbildung~\ref{Abbildung-PP} keine leere Maßphrase gibt, die man in Analogie zum leeren Determinator in Abbildung~\ref{Abbildung-NP-ohne-Det} erwarten könnte.
 Der Grund für den leeren Determinator in Abbildung~\ref{Abbildung-NP-ohne-Det} ist, dass die gesamte Nominalphrase
 ohne den Determinator eine ähnliche Bedeutung hat wie diejenigen mit einem Determinator. Die Bedeutung, die normalerweise
@@ -1246,6 +1242,13 @@ keine Bedeutungskomponente für die Komposition. Es ist daher nicht nötig, eine
 irgendwie zur Bedeutung der gesamten PP beiträgt. Daher besagt die Regel in (\ref{Regel-PP-P}), dass eine
 Präpositionalphrase aus \pbar besteht, das heißt aus einer Kombination von P und NP.\is{Präposition|)}
 
+Ob man leere Elemente annimmt oder nicht, hängt oft von weiteren Interaktionen dieser Elemente mit
+der Grammatik \citep*[Abschnitt~15.3.5]{SWB2003a}\todostefan{Bender zitieren} oder auch von grundsätzlichen Überlegungen ab. \citet{BHPS61a} haben
+gezeigt, dass man Phrasenstrukturgrammatiken mit leeren Elementen in solche ohne umwandeln kann. Man
+könnte statt des leeren Determinators eben auch die Regel NP $\to$ \nbar annehmen. Der semantische
+Beitrag des Determinators müsste dann in diese Regel integriert werden. Siehe \citet{AMEgati} für
+einen Vorschlag einer determinatorlosen Analyse für das Bulgarische und \citet[Kapitel~19]{MuellerGT-Eng5} für eine allgemeine Diskussion leerer Elemente.
+
 \section{\xbart}
 %\section{X̅-Theory}
 \label{sec-xbar}
@@ -1262,7 +1265,7 @@ mit ihren Komplementen zu einer neuen Konstituente kombiniert werden (\mex{1}a,b
 \ex PP $\to$ NP \pbar
 \zl
 %
-Grammatiker, die sich mit dem \ili{Englisch}en\il{Englisch} beschäftigten, bemerkten, dass parallele Strukturen für Phrasen verwendet werden können, die Adjektive oder Verben als Kopf haben.
+Grammatiker*innen, die sich mit dem \ili{Englisch}en\il{Englisch} beschäftigt haben, haben festgestellt, dass parallele Strukturen für Phrasen verwendet werden können, die Adjektive oder Verben als Kopf haben.
 Ich bespreche an dieser Stelle Adjektivphrasen und verschiebe die Diskussion der Verbalphrasen auf
 Kapitel~\ref{chap-valence}, da die Annahmen bezüglich der Struktur von Sätzen sowohl im \ili{Deutsch}en
 als auch im \ili{Englisch}en von der \xbart abweichen, wie sie heute üblicherweise angenommen wird. Wie im \ili{Deutsch}en können bestimmte Adjektive
@@ -1330,33 +1333,39 @@ Wie in Abschnitt~\ref{sec-PSG-Merkmale} gezeigt wurde, ist es möglich, über se
 Phrasenstrukturregeln zu generalisieren und so zu allgemeineren Regeln zu gelangen. Auf diese Weise werden Eigenschaften wie
 Person, Numerus und Genus nicht mehr in den Kategoriesymbolen kodiert, sondern es werden nur einfache
 Symbole wie NP, Det und N verwendet. Es ist nur dann nötig, etwas über die Werte
-eines Merkmals festzulegen, wenn dies im Kontext einer gegebenen Regel relevant ist. Wir können diese Abstraktion einen Schritt
+eines Merkmals festzulegen, wenn das im Kontext einer gegebenen Regel relevant ist. Wir können diese Abstraktion einen Schritt
 weiterführen: Statt explizite Kategoriesymbole wie N, V, P und A für lexikalische Kategorien und
 NP, VP, PP und AP für phrasale Kategorien zu verwenden, kann man einfach eine Variable für die jeweilige Wortart verwenden und von X und XP sprechen.
 
-Diese Form der Abstraktion findet sich in der so"=genannten \xbart (oder X"=bar-Theorie; der Begriff \emph{bar}
-bezieht sich auf den Strich über dem Symbol), die von \citet{Chomsky70a} entwickelt und von
+Diese Form der Abstraktion findet sich in der so"=genannten \xbart (oder X"=bar-Theorie; der Begriff
+\emph{bar} `Balken' bezieht sich auf den Strich über dem Symbol), die von \citet{Chomsky70a} entwickelt und von
 \citet{Jackendoff77a} verfeinert wurde. Diese Form abstrakter Regeln spielt in vielen verschiedenen
 Theorien eine wichtige Rolle. Zum Beispiel: Government \& Binding\indexgb \citep{Chomsky81a}, Generalized Phrase
-Structure Grammar\indexgpsg \citep{GKPS85a,Uszkoreit87a} und Lexical Functional Grammar\indexlfg
+Structure Grammar\indexgpsg \citep*{GKPS85a,Uszkoreit87a} und Lexical Functional Grammar\indexlfg
 \citep{Bresnan82a-ed,BATW2016a}. In der HPSG\indexhpsg, der in diesem Buch angenommenen Theorie, spielt die \xbar-Theorie ebenfalls
 eine Rolle, aber es wurden nicht alle Beschränkungen des \xbar-Schemas übernommen.
 
 %\largerpage
-(\mex{1}) zeigt eine mögliche Instanziierung der \xbar-Regeln, wobei die Kategorie X anstelle von N verwendet wurde, sowie Beispiele für Wortketten,
+(\mex{1}) zeigt eine mögliche Instanziierung der \xbar-Regeln, wobei die Kategorie N für X eingesetzt wurde, sowie Beispiele für Wortfolgen,
 die mit diesen Regeln abgeleitet werden können:
 %\todostefan{martin meint ich solle hier NP statt Strichnotation verwenden}
 \eanoraggedright
 \label{psg-xbar-schema}
 \oneline{%
 \begin{tabular}[t]{@{}l@{\hspace{5mm}}l@{\hspace{5mm}}l@{}}
-\xbar"=Regel & \mbox{mit spezifischen Kategorien} & \mbox{Beispielketten}\\[2mm]
-$\overline{\overline{\mbox{X}}} \rightarrow \overline{\overline{\mbox{specifier}}}$~~\xbar &
-$\overline{\overline{\mbox{N}}} \rightarrow \overline{\overline{\mbox{DET}}}$~~\nbar & \mbox{the [picture of Paris]} \\
-$\xbar \rightarrow$ \xbar~~$\overline{\overline{\mbox{adjunct}}}$            & \nbar $\rightarrow$ \nbar~~$\overline{\overline{\mbox{REL\_CLAUSE}}}$ & \mbox{[picture of Paris]}\\
-                            &                                              & \mbox{[that everybody knows]}\\
-\xbar $\rightarrow \overline{\overline{\mbox{adjunct}}}$~~\xbar            & \nbar $\rightarrow \overline{\overline{\mbox{A}}}$~~\nbar & \mbox{beautiful [picture of Paris]}\\
-\xbar $\rightarrow$ \mbox{X}~~$\overline{\overline{\mbox{complement}}}*$   & \nbar $\rightarrow$ \mbox{N}~~$\overline{\overline{\mbox{P}}}$ & \mbox{picture [of Paris]}\\
+\xbar"=Regel & \mbox{mit spezifischen Kategorien} & \mbox{Beispiele}\\[2mm]
+$\overline{\overline{\mbox{X}}} \rightarrow \overline{\overline{\mbox{Spezifikator}}}$~~\xbar &
+$\overline{\overline{\mbox{N}}} \rightarrow \overline{\overline{\mbox{DET}}}$~~\nbar & \mbox{das [Bild von Paris]} \\
+$\xbar \rightarrow$ \xbar~~$\overline{\overline{\mbox{Adjunkt}}}$            & \nbar $\rightarrow$
+                                                                               \nbar~~$\overline{\overline{\mbox{REL\_CLAUSE}}}$
+                                                  & \mbox{[Bild von Paris]}\\
+                            &                                              & \mbox{[das alle kennen]}\\
+\xbar $\rightarrow \overline{\overline{\mbox{Adjunkt}}}$~~\xbar            & \nbar $\rightarrow
+                                                                             \overline{\overline{\mbox{A}}}$~~\nbar
+                                                  & \mbox{schöne [Bild von Paris]}\\
+\xbar $\rightarrow$ \mbox{X}~~$\overline{\overline{\mbox{Komplement}}}*$   & \nbar $\rightarrow$
+                                                                             \mbox{N}~~$\overline{\overline{\mbox{P}}}$
+                                                  & \mbox{Bild [von Paris]}\\
 \end{tabular}}
 \z
 
@@ -1391,7 +1400,7 @@ und Determinatoren sind Spezifikatoren in NPs \citep[\page
 
 %\largerpage
 Nicht"=Kopf-Positionen können nur maximale Projektionen aufnehmen, und daher haben Komplemente, Adjunkte und Spezifikatoren immer zwei Striche. Wie bereits oben erwähnt,
-hält sich die HPSG nicht an die \xbart. Zum Beispiel können Argumente Wörter oder intermediäre, nicht vollständige
+hält sich die HPSG nicht an die \xbart. Zum Beispiel können Argumente Wörter oder nicht vollständige
 Phrasen sein (siehe Kapitel~\ref{chap-verbal-complex} über den Verbalkomplex in germanischen\il{Germanisch} SOV-Sprachen).
 Abbildung~\vref{Abb-GB-Min-Max} gibt einen Überblick über die minimale und maximale Struktur von Phrasen.
 \begin{figure}
@@ -1407,11 +1416,11 @@ sm edges
 %sm edges
 %for tree={parent anchor=south, child anchor=north,align=center,base=bottom}
 [XP
-  [specifier]
+  [Spezifikator]
   [\xbar
-    [adjunct]
+    [Adjunkt]
     [\xbar
-      [complement] [X] ] ] ]
+      [Komplement] [X] ] ] ]
 \end{forest}
 \hfill\mbox{}
 \caption{\label{Abb-GB-Min-Max}Minimale und maximale Struktur von Phrasen}
@@ -1420,7 +1429,7 @@ sm edges
 Manche Kategorien haben keinen Spezifikator oder haben die Option, einen zu haben. Adjunkte sind optional, und daher
 müssen nicht alle Strukturen ein \xbar mit einer Adjunkt-Tochter enthalten. Zusätzlich zu der in der rechten
 Abbildung gezeigten Verzweigung sind manchmal Adjunkte an XP und Kopf"=Adjunkte\is{Adjunkt!Kopf-}
-möglich. Es gibt in (\ref{psg-xbar-schema}) nur eine einzige Regel für Fälle, in denen ein Kopf den
+möglich. Es gibt in (\ref{psg-xbar-schema}) nur eine einzige Regel für den Fall, dass ein Kopf den
 Komplementen vorausgeht, jedoch ist eine Abfolge, in der das Komplement dem Kopf vorausgeht, natürlich ebenfalls
 möglich. Das zeigt Abbildung~\ref{Abb-GB-Min-Max}.
 
@@ -1469,13 +1478,12 @@ sm edges
   und \emph{das schöne Bild von Paris}}
 \end{figure}%
 
-Die in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} gegebene Analyse nimmt an, dass alle Nicht"=Köpfe in einer Regel
+Bei der in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} gegebene Analyse geht man davon aus, dass alle Nicht"=Köpfe in einer Regel
 Phrasen sind. Man muss daher annehmen, dass es eine Determinatorphrase gibt, selbst wenn der Determinator nicht mit anderen Elementen kombiniert wird.
 Die unäre Verzweigung von Determinatoren ist nicht elegant, aber sie ist konsistent.\footnote{%
-	Für eine alternative Version der \xbar-Theorie, die keine ausgearbeitete Struktur für Determinatoren annimmt, siehe \citew{Muysken82a}.
+	Für eine alternative Version der \xbar-Theorie, die ohne unäre Verzweigungen bei Determinatoren auskommt, siehe \citew{Muysken82a}.
 }
-Die unären Verzweigungen für die NP \emph{Paris} in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} mögen ebenfalls etwas merkwürdig erscheinen, aber sie werden tatsächlich
-plausibler, wenn man komplexere Nominalphrasen betrachtet:
+Die unären Verzweigungen für die NP \emph{Paris} in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} mögen ebenfalls etwas merkwürdig erscheinen, aber sie werden plausibler, wenn man komplexere Nominalphrasen betrachtet:
 \eal
 \ex
 das Paris der dreißiger Jahre
@@ -1485,7 +1493,7 @@ die Maria aus Hamburg
 Unäre Projektionen sind etwas unelegant, aber das sollte uns hier nicht allzu sehr kümmern, da wir
 in der Diskussion der lexikalischen Einträge in (\ref{Lexikon-Projektion}) bereits
 gesehen haben, dass unär verzweigende Knoten größtenteils vermieden werden können und dass es in der Tat wünschenswert ist,
-solche Strukturen zu vermeiden. Andernfalls erhält man unechte Ambiguitäten\is{Ambiguität!unechte}. In den folgenden
+solche Strukturen zu vermeiden. Andernfalls erhält man unechte Mehrdeutigkeiten\is{Mehrdeutigkeit!unechte}. In den folgenden
 Kapiteln zeige ich, wie die HPSG (light) Determinatoren sowie Nominal-, Adjektiv- und Verbalphrasen analysieren kann, ohne
 unäre Regeln anzunehmen. Statt also die Strukturen in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} anzunehmen,
 werden die viel einfacheren in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris-HPSG} verwendet.
@@ -1533,8 +1541,8 @@ sm edges
 
 \begin{enumerate}
 \item Warum sind Phrasenstrukturgrammatiken, die nur atomare Kategorien verwenden, für die Beschreibung natürlicher Sprachen unzureichend?
-\item Geben Sie unter Annahme der Grammatik in (\ref{psg-binaer}) an, welche Schritte (das Ersetzen von Symbolen) man durchführen muss, um zum Symbol
-	 V im Satz (\mex{1}) zu gelangen.
+\item Geben Sie unter Annahme der Grammatik in (\ref{psg-binaer}) an, welche Schritte (das Ersetzen
+  von Symbolen) man durchführen muss, um bei der Ableitung des Satzes (\mex{1}) zum Symbol V zu gelangen.
 \ea
 er das Buch dem Kind gibt
 \z
@@ -1557,8 +1565,8 @@ Ihre Antwort sollte der Analyse in (\ref{bsp-anwendung-grammatik}) ähneln.
 \exercises{
 Dieses Kapitel ist großteils identisch mit Kapitel~2 von \citet{MuellerGT-Eng5}. Da der Fokus
 dieses Buches sich von dem des Lehrbuchs über grammatische Theorie unterscheidet, habe ich beschlossen, hier einen anderen
-Satz von Übungen bereitzustellen. Wer Interesse daran hat, mehr Übungen zu bearbeiten, kann zusätzlich das
-Lehrbuch zur grammatischen Theorie konsultieren. Es ist bei Language Science Press erschienen und daher Open Access, das
+Satz von Übungen bereitzustellen. Wer Interesse daran hat, mehr Übungen zu bearbeiten, kann
+zusätzlich das Grammatiktheorie"=Lehrbuch konsultieren. Es ist ebenfalls bei Language Science Press erschienen und daher Open Access, das
 heißt, es ist frei verfügbar.
 \begin{enumerate}
 \item\label{exercise-NP-PSG}
@@ -1576,26 +1584,29 @@ das ein Lied singende Kind aus dem Allgäu
   Det, A, N und P für die Phrasenstrukturregeln.
 
 \item Verwenden Sie die Online-Version von SWI-Prolog\footnote{%
-  \url{https://swish.swi-prolog.org/}, 2020-06-07.
+  \url{https://swish.swi-prolog.org/}, 30.06.2026.
 }
 um Ihre Grammatik mit dem Computer zu testen. Einzelheiten zur Notation finden Sie im englischen\il{Englisch} Wikipedia-Eintrag für Definite Clause Grammar
 (DCG)\is{Definite Clause Grammar (DCG)}.\footnote{%
-\url{https://en.wikipedia.org/wiki/Definite_clause_grammar}, 2020-06-07.
+\url{https://en.wikipedia.org/wiki/Definite_clause_grammar}, 30.06.2026.
 }
 \end{enumerate}}
 
 
 \furtherreading{
-Die Erweiterung von Phrasenstrukturgrammatiken um Merkmale wurde bereits 1963 von \citet{Harman63a} vorgeschlagen.
+Die Erweiterung von Phrasenstrukturgrammatiken um Merkmale wurde bereits 1963 von \citeauthor{Harman63a} vorgeschlagen.
 
 Die in diesem Kapitel besprochene Phrasenstrukturgrammatik für Nominalphrasen deckt einen großen Teil der Syntax
-von Nominalphrasen ab, kann aber bestimmte NP-Strukturen nicht erklären. Ferner hat sie das Problem, das Übung~3 von \citet[Kapitel~2]{MuellerGT-Eng5}
-aufzeigen soll. Eine Diskussion dieser Phänomene und eine Lösung im Rahmen der HPSG findet sich
+von Nominalphrasen ab, kann aber bestimmte NP-Strukturen nicht erklären. Ferner hat sie das Problem,
+das auch in Übung~3 von \citet[Kapitel~2]{MuellerGT-Eng5} besprochen wird: Für Grammatiken mit
+leerem Nomen und leerem Determinator ergeben sich Probleme aus der Interaktion dieser beiden leeren
+Elemente. Eine Diskussion dieser Phänomene und eine Lösung des Problems im Rahmen der HPSG findet sich
 in \citew{Netter98a}. Für eine Diskussion der Frage, ob Det oder N der Kopf in nominalen
-Strukturen ist, siehe \citet{MuellerHeadless} und \citet{MyPM2021a}. \citet{VanEynde2021a} ist ein Überblick über die Arbeiten zur NP in der HPSG.
+Strukturen ist, siehe \citet{MuellerHeadless} und \citet{MyPM2021a}. \citet{VanEyndeNominalStructures} ist ein Überblick über die Arbeiten zur NP in der HPSG.}
 
-Die Diskussion der Integration semantischer Information in Phrasenstrukturgrammatiken war sehr kurz. Eine detaillierte Diskussion der Prädikatenlogik und
-ihrer Integration in Phrasenstrukturgrammatiken -- sowie eine Diskussion des Quantorenskopus\is{Skopus} -- findet sich in \citew{BB2005a}.}
+% Das war in der Grammatiktheorie und ist fälschlicherweise auch im englischen Text gelandet.
+% Die Diskussion der Integration semantischer Information in Phrasenstrukturgrammatiken war sehr kurz. Eine detaillierte Diskussion der Prädikatenlogik und
+% ihrer Integration in Phrasenstrukturgrammatiken -- sowie eine Diskussion des Quantorenskopus\is{Skopus} -- findet sich in \citew{BB2005a}.}
 
 
 % reset to show the chapter heading
