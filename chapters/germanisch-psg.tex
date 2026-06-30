@@ -44,7 +44,7 @@ der Phrasen \emph{das Buch} und \emph{dem Kind} bilden, werden diese als \emph{N
 kurz NPs bezeichnet. Das Pronomen \emph{er} kann an denselben Stellen wie volle NPs auftreten,
 weshalb man es ebenfalls der Kategorie NP zuordnet.
 
-Die Gruppierung von Konstituenten kann man sich mithilfe von Kästen veranschaulichen und darstellen. Zum Beispiel kann \emph{er das
+Die Gruppierung von Konstituenten kann man sich mithilfe von Schachteln veranschaulichen und darstellen. Zum Beispiel kann \emph{er das
   Buch dem Kind gibt} wie in Abbildung~\ref{fig-boxes} dargestellt werden.\todostefan{Beispiele aus HPSG-Buch}
 \begin{figure}
 \centering
@@ -57,7 +57,7 @@ Die Gruppierung von Konstituenten kann man sich mithilfe von Kästen veranschaul
        \TZbox{dem}
        \TZbox{Kind}}
 \TZbox{gibt}}
-\caption{\label{fig-boxes}Wörter und Phrasen in Kästen}
+\caption{\label{fig-boxes}Wörter und Phrasen in Schachteln}
 \end{figure}%
 
 Die oben genannten Kategorien können in dieses Bild integriert werden. Das resultierende Bild ist als
@@ -97,12 +97,12 @@ Abbildung~\ref{fig-boxes-pos} dargestellt.
        V\\
        gibt
        \end{tabular}}}
-\caption{\label{fig-boxes-pos}Wörter und Phrasen in Kästen mit Wortartetiketten}
+\caption{\label{fig-boxes-pos}Wörter und Phrasen in Schachteln mit Wortartetiketten}
 \end{figure}
-Kästen mit denselben Beschriftungen können durch andere Kästen mit denselben Beschriftungen ersetzt werden. Zum Beispiel kann der Kasten
+Schachteln mit denselben Beschriftungen können durch andere Schachteln mit denselben Beschriftungen ersetzt werden. Zum Beispiel kann die Schachtel
 für \emph{dem Kind} durch \emph{dem Mädchen} ersetzt werden. \emph{Er} kann
 durch \emph{das Mädchen} ersetzt werden. Das ist sehr intuitiv, aber es ist besser, ein Verfahren zu haben,
-mit dem man tatsächlich Strukturen ableiten kann, die sich als solche Kästen oder als syntaktische
+mit dem man tatsächlich Strukturen ableiten kann, die sich als solche Schachteln oder als syntaktische
 Bäume darstellen lassen, wie man sie aus Einführungskursen kennt. Daher werden wir uns jetzt mit
 Phrasenstrukturgrammatiken befassen.
 
@@ -977,11 +977,11 @@ sm edges
 \mbox{}
 \caption{\label{Abbildung-NP-ohne-Nomen}Nominalphrasen ohne overten Kopf}
 \end{figure}%
-Kehren wir zu Kästen wie dem in Abbildung~\ref{fig-boxes-pos} zurück, so entsprechen die Regeln in (\mex{0}) leeren Kästen mit denselben Etiketten wie die Kästen
-gewöhnlicher Nomen. Wie wir zuvor überlegt haben, ist der tatsächliche Inhalt der Kästen unwichtig, wenn
+Kehren wir zu Schachteln wie der in Abbildung~\ref{fig-boxes-pos} zurück, so entsprechen die Regeln in (\mex{0}) leeren Schachteln mit denselben Etiketten wie die Schachteln
+gewöhnlicher Nomen. Wie wir zuvor überlegt haben, ist der tatsächliche Inhalt der Schachteln unwichtig, wenn
 man die Frage betrachtet, wo wir sie einfügen können. Zum Beispiel können die Nominalphrasen in (\ref{Beispiele-NP-Adjunkte})
-in denselben Sätzen auftreten. Ebenso verhält sich der leere Nomenkasten wie einer mit einem echten Nomen: Wenn wir
-den leeren Kasten nicht öffnen, werden wir den Unterschied zu einem gefüllten Kasten nicht bemerken können.
+in denselben Sätzen auftreten. Ebenso verhält sich die leere Nomenschachtel wie eine mit einem echten Nomen: Wenn wir
+die leere Schachtel nicht öffnen, werden wir den Unterschied zu einer gefüllten Schachtel nicht bemerken können.
 
 Es ist nicht nur möglich, das Nomen aus Nominalphrasen wegzulassen, sondern auch der Determinator kann in bestimmten Kontexten unrealisiert bleiben.
 (\mex{1}) zeigt Nominalphrasen im Plural\is{Plural}:
@@ -1069,10 +1069,10 @@ oder Nomen ohne Komplemente in (\mex{0}c) sowie (\ref{NP-Regeln-Nbar-N}) -- hier
 \z
 Wenn wir diese Regeln anwenden, dann erzeugen wir unär verzweigende Teilbäume, das heißt Bäume mit einer Mutter, die
 nur eine Tochter hat. (Siehe Abbildung~\ref{Abbildung-NP-ohne-Det} für ein Beispiel dafür.) Wenn wir die
-Parallele zu den Kästen aufrechterhalten, würde das bedeuten, dass es einen Kasten gibt, der einen weiteren Kasten enthält, nämlich denjenigen mit
+Parallele zu den Schachteln aufrechterhalten, würde das bedeuten, dass es eine Schachtel gibt, die eine weitere Schachtel enthält, nämlich diejenige mit
 dem relevanten Inhalt.
 
-Im Prinzip hindert uns nichts daran, diese Information direkt in den größeren Kasten zu legen. Statt
+Im Prinzip hindert uns nichts daran, diese Information direkt in die größere Schachtel zu legen. Statt
 der Regeln in (\mex{1}) verwenden wir einfach die Regeln in (\mex{2}):
 \eal
 \ex A $\to$ kluge
