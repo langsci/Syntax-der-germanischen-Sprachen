@@ -45,7 +45,8 @@
 
 \newcommand{\sliste}[1]{%
 \mbox{%
-$\langle$\mbox{\upshape\scshape #1}$\rangle$}%
+\hspace{-.9pt}$\langle$\mbox{\upshape\scshape #1}$\rangle$}%
+%\upshape⟨\scshape #1⟩\}%
 }
 % \newcommand{\sliste}[1]{%
 % \mbox{%
@@ -78,7 +79,7 @@ $\langle$\mbox{\upshape\scshape #1}$\rangle$}%
 
 \newcommand{\eliste}{%
 \mbox{%
-$\left\langle\right\rangle$}%
+\hspace{-.9pt}$\left\langle\right\rangle$}%
 }
 
 \newcommand{\oldliste}[1]{%
@@ -124,9 +125,9 @@ $%
 % }
 
 
-
+% textit does italics correction, which is needed for "helf", while \itshape does not. 05.03.2026
 \newcommand{\phonliste}[1]{%
-\mbox{$\langle$\normalfont\itshape#1$\rangle$}%
+\mbox{$\langle$\normalfont\textit{#1}$\rangle$}%
 }
 
 % \newcommand{\phonliste}[1]{%
@@ -167,39 +168,107 @@ $%
 
 %\setlength{\extrarowheight}{1pt}
 
+% \newcommand{\ms}[2][]{%
+%   \mbox{%
+%     \delimiterfactor=1000 \delimitershortfall=0pt
+%     \tabcolsep=0pt
+%     $\left[%
+%     \begin{tabular}{>{\upshape\scshape}l@{}>{\hspace*{5pt}\normalfont\itshape}l}
+%     \if\relax\detokenize{#1}\relax\else
+%     \multicolumn{2}{>{\normalfont\itshape}l}{#1}%
+%     \\ 
+%     \fi
+%     #2%
+%     \end{tabular}%
+%     \right]$%
+%   }%
+%   \vspace{1mm}%
+% }
+
+% David Carlisle, 2026-02-15
+% https://tex.stackexchange.com/a/759739/18561
 \newcommand{\ms}[2][]{%
-  \mbox{%
-    \delimiterfactor=1000 \delimitershortfall=0pt
-    \tabcolsep=0pt
-    $\left[%
-    \begin{tabular}{>{\upshape\scshape}l@{}>{\hspace*{5pt}\normalfont\itshape}l}
+\ifdim\lastskip=-1pt % flag value
+  \mbox{}\\*[-.8\baselineskip]%
+\else
+  \ifnum\lastpenalty=-10000 % other flag value
+    \mbox{}\\*[-.8\baselineskip]%
+  \fi
+\fi
+\mbox{%
+\delimiterfactor=1000 \delimitershortfall=0pt\tabcolsep=0pt%
+$\hspace{-1pt}\left[%
+\begin{tabular}{>{\upshape\scshape}l@{}>{\hspace*{5pt}\normalfont\itshape}l}
     \if\relax\detokenize{#1}\relax\else
-    \multicolumn{2}{>{\normalfont\itshape}l}{#1}%
-    \\ 
-    \fi
-    #2%
-    \end{tabular}%
-    \right]$%
-  }%
-  \vspace{1mm}%
+        % https://tex.stackexchange.com/a/762975/18561
+        % no added vertical spacing on top
+        %\omit\span\omit \normalfont\itshape #1\hfill\mbox{}%
+        % some points of vertical space on top added back in
+        \omit\span\omit \normalfont\itshape\vrule height7pt width0pt\relax #1\hfill\mbox{}%
+        \\\noalign{\vspace{2pt}}%
+    \fi%
+#2%
+\end{tabular}%
+\right]\hspace{-1pt}$%
+}%
+% David Carlisle sagt man braucht \par, aber dann fehlen Zeilenumbrüche bei \zl
+%\par\vspace{1mm}%
+\vspace{1pt}%
 }
 
 
+
+% This is code to do the spaceing by hand. It is needed for special cases like
+% implications
+
+\def\msskip{\mbox{}\\*[-.8\baselineskip]}
+
+
 \newcommand{\onems}[2][]{%
-  \mbox{%
-    \delimiterfactor=1000 \delimitershortfall=0pt
-    \tabcolsep=0pt
-    $\left[%
+\ifdim\lastskip=-1pt % flag value
+  \mbox{}\\*[-.8\baselineskip]%
+\else
+  \ifnum\lastpenalty=-10000 % other flag value
+    \mbox{}\\*[-.8\baselineskip]%
+  \fi
+\fi
+\mbox{%
+    \delimiterfactor=1000 \delimitershortfall=0pt\tabcolsep=0pt
+    $\hspace{-1pt}\left[%
     \begin{tabular}{>{\upshape\scshape}l}
     \if\relax\detokenize{#1}\relax\else
-    {\normalfont\itshape #1}%
-    \\ 
+%    {\normalfont\itshape #1}%
+%    \\%
+        % https://tex.stackexchange.com/a/762975/18561
+        % no added vertical spacing on top
+        %\normalfont\itshape #1\hfill\mbox{}%
+        % some points of vertical space on top added back in
+        \normalfont\itshape\vrule height7pt width0pt\relax #1\hfill\mbox{}%
+        \\\noalign{\vspace{2pt}}%
     \fi
     #2%
     \end{tabular}%
-    \right]$%
+    \right]\hspace{-1pt}$%
   }%
-  \vspace{1mm}%
+  \vspace{1pt}%
+}
+
+% The test would be too complicated, just do the skip.
+\newcommand{\onemsskip}[2][]{%
+\mbox{}\\*[-.8\baselineskip]%
+\mbox{%
+    \delimiterfactor=1000 \delimitershortfall=0pt\tabcolsep=0pt
+    $\hspace{-1pt}\left[%
+    \begin{tabular}{>{\upshape\scshape}l}
+    \if\relax\detokenize{#1}\relax\else
+    {\normalfont\itshape #1}%
+    \\%
+    \fi
+    #2%
+    \end{tabular}%
+    \right]\hspace{-1pt}$%
+  }%
+  \vspace{1pt}%
 }
 
 
@@ -228,7 +297,8 @@ $%
 \settowidth{\MyetagLength}{{$\scriptstyle 1$}}
 
 % empty box
-\newcommand{\etag}{\ibox{\rule{0ex}{1.1ex}\hspace{\MyetagLength}}\xspace}
+%\newcommand{\etag}{\ibox{\rule{0ex}{1.1ex}\hspace{\MyetagLength}}\xspace}
+\newcommand{\etag}{\ibox{\phantom{3}}\xspace}
 
 %\newcommand{\tbox}[1]{{\tiny\fbox{#1}}}
 \let\tbox=\iboxt
@@ -237,7 +307,19 @@ $%
 %\newcommand{\type}[1]{\ifmmode\mathnormal{\mathit{#1}}\else\textnormal{\textit{#1}}\fi}
 % not related to the question but \mathnormal{\mathit{#1}} is the same as \mathit{#1} as math font commands don't combine. – 
 % David Carlisle
-\newcommand{\type}[1]{\ifmmode\mathit{#1}\else\textnormal{\textit{#1}}\fi}
+%\newcommand{\type}[1]{\ifmmode\mathit{#1}\else\textnormal{\textit{#1}}\fi}
+
+% https://tex.stackexchange.com/a/759902/18561
+\DeclareTextFontCommand{\typefont}{\normalfont\itshape}
+\newcommand{\type}{}
+\DeclareRobustCommand{\type}{%
+  \ifmmode
+    \expandafter\mathit
+  \else
+    \expandafter\typefont
+  \fi
+}
+
 
 \newcommand{\typeSM}[1]{\ifmmode\mathnormal{\mathit{#1}}\else\textnormal{\textit{#1}}\fi}
 
@@ -260,3 +342,6 @@ $%
 \newcommand{\qeq}{$=_q$\xspace}
 
 \newcommand{\impl}{$\Rightarrow$\xspace}
+
+
+\newcommand{\npref}{NP\kern-1pt\sub{\type{ref}}\xspace}
