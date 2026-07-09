@@ -4,7 +4,7 @@
 \section{Phrasenstrukturgrammatiken und \xbart}
 
 \begin{enumerate}
-\item Zeichnen Sie Bäume für die folgenden Phrasen. Sie dürfen das Symbol NP für Eigennamen und \nbar für
+\item Zeichnen Sie Bäume für die folgenden Phrasen. Verwenden Sie das Symbol NP für Eigennamen und \nbar für
   Nomina ohne Komplemente verwenden (wie in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris-HPSG}).
 \eal
 \ex eine Stunde vor der Ankunft des Zuges
@@ -99,7 +99,7 @@ AP $\to$ \abar\\
 \abar $\to$ NP A\\
 %
 \z
-Sie muss mit einem Lexikon kombiniert werden, das lexikalische Einträge wie die in (\mex{1}) enthält:
+Die Grammatik muss mit einem Lexikon kombiniert werden, das lexikalische Einträge wie die in (\mex{1}) enthält:
 \ea
 Det $\to$ das\\
 Det $\to$ ein\\
@@ -108,6 +108,7 @@ NP $\to$ Paris\\
 A $\to$ singende\\
 P $\to$ aus\\
 \z
+Für jedes Wort, das in einem der Bäume auf"|taucht, muss es einen Eintrag geben.
 \item Die Grammatik der vorigen Aufgabe kann mehr oder weniger direkt in den Computer eingegeben
   werden. Sie müssen Großbuchstaben durch Kleinbuchstaben ersetzen, Kommata zwischen den Symbolen auf
   der rechten Regelseite einfügen, \nbar durch n1 ersetzen und die lexikalischen Einträge in eckige
@@ -129,17 +130,15 @@ n1 --> [lied].\\
 \begin{tabular}[t]{@{}l@{~}ll@{\hspace{2em}}r@{}}
 a. & laugh      & \spr \sliste{ NP[\type{nom}] }\\
 b. & eat        & \spr \sliste{ NP[\type{nom}] }, \comps \sliste{ NP[\type{acc}] }\\
-c. & to douse   & \spr \sliste{ NP[\type{nom}] }, \comps \sliste{ NP[\type{acc}] }\\
-d. & bezichtigen& \spr \eliste, \comps \sliste{ NP[\type{nom}], NP[\type{gen}] } &(\ili{Deutsch})\\
-   & accuse\\ 
-e. & she & \spr \eliste, \comps \eliste\\
+   &            & \spr \sliste{ NP[\type{nom}] }, \comps \eliste\\
+d. & begiessen  & \spr \eliste, \comps \sliste{ NP[\type{nom}], NP[\type{acc}] } \\
+d. & bezichtigen& \spr \eliste, \comps \sliste{ NP[\type{nom}], NP[\type{gen}] } \\
+e. & sie & \spr \eliste, \comps \eliste\\
 f. & the & \spr \eliste, \comps \eliste\\
-g. & Ankunft & \spr \sliste{ Det }, \comps \sliste{ NP } & (\ili{Deutsch})\\ 
-   & arrival & \spr \sliste{ Det }, \comps \eliste\\
+g. & Ankunft & \spr \sliste{ Det }, \comps \sliste{ NP } \\ 
+   &         & \spr \sliste{ Det }, \comps \eliste\\
 \end{tabular}
 \z
-Wenn Sie sich bei der Kasuszuweisung unsicher sind, können Sie das
-  Wiktionary verwenden: \url{https://de.wiktionary.org/}.
 
 \item Zeichnen Sie Bäume für die NPn, die auch in Aufgabe~\ref{exercise-NP-PSG} auf Seite~\pageref{exercise-NP-PSG} in Kapitel~\ref{chap-psg} verwendet wurden.
 \eal
@@ -267,7 +266,7 @@ Die Bäume mit den Lösungen sind im
 Folgenden angegeben. Abbildung~\ref{fig-weil-dem-Kind-solch-ein-buch-niemand-schenkt} unterscheidet sich von
 Abbildung~\ref{fig-weil-Aicke-dem-Kind-ein-buch-schenkt} in der Art, wie die Elemente in der \compsl
 nummeriert sind, aber in jedem Fall ist die Reihenfolge der Elemente in der \compsl von \emph{schenkt}
-\sliste{ \npnom, \npdat, \npacc }. Die unterschiedliche Nummerierung ist auf die Reihenfolge zurückzuführen, in der
+\sliste{ \npnom, \npdat, \npacc{} }. Die unterschiedliche Nummerierung ist auf die Reihenfolge zurückzuführen, in der
 die Elemente kombiniert werden. Wenn die Nummerierung durchgängig von oben nach unten vorgenommen wird, ergibt sich
 Abbildung~\ref{fig-weil-dem-Kind-solch-ein-buch-niemand-schenkt}. Wenn man bei der Vergabe der Nummern großzügiger
 ist, kann dieselbe Situation wie in
@@ -319,7 +318,7 @@ sm edges
 ] ] ]
 \end{forest}}
 \caption{\label{fig-weil-dem-Kind-solch-ein-buch-niemand-schenkt}Die Analyse von \emph{weil dem Kind
-    solch ein Buch niemand schenkt}}
+    solch ein Buch niemand schenkt} mit von oben nach unten vergebenen Nummern}
 \end{figure}
 
 \begin{figure}
@@ -342,7 +341,7 @@ sm edges
 ] ] ]
 \end{forest}}
 \caption{\label{fig-weil-dem-Kind-solch-ein-buch-niemand-schenkt-different-numbering}Die Analyse von \emph{weil dem Kind
-    solch ein Buch niemand schenkt}}
+    solch ein Buch niemand schenkt} mit Nummern entsprechend der Reihenfolge in der \compsl}
 \end{figure}
 
 
@@ -563,7 +562,7 @@ Das Dativobjekt folgt dem Verb, also muss es eine SVO"=Sprache sein. Ein Beispie
 \glt `Ich habe ihm das Buch gegeben.'
 \z
 
-(\ref{ex-acc-aux-nom-dat-v}) hat ein Hilfsverb und zwei NPn, gefolgt von einem Verb. Da das Dativobjekt in einer
+(\ref{ex-acc-aux-nom-dat-v}) hat ein Hilfsverb und zwei NPen, gefolgt von einem Verb. Da das Dativobjekt in einer
 SVO"=Sprache dem Verb folgen würde, muss es eine SOV"=Sprache sein. Da alle germanischen\il{Germanisch} SOV"=Sprachen auch V2"=Sprachen
 sind, muss (\ref{ex-acc-aux-nom-dat-v}) eine V2"=Sprache sein. Das \ili{Deutsch}e und das \ili{Niederländisch}e wären Beispiele.
 
@@ -583,8 +582,8 @@ This book, Kim had given Sandy.
 
 \noindent
 Das Muster in (\ref{ex-acc-aux-nom-v-pp}) kann hinsichtlich V2 und
-SOV/SVO nicht eindeutig klassifiziert werden. Da PPn leicht extraponiert werden können, könnte es eine SOV"=\pagebreak{}Sprache mit Extraposition sein (\zb{}
-das \ili{Deutsch}e), oder es könnte das \ili{Englisch}e mit Fragebildung (Residual-V2) sein:
+SOV/SVO nicht eindeutig klassifiziert werden. Da PPen leicht extraponiert werden können, könnte es
+eine SOV"=Sprache mit Extraposition sein (\zb das \ili{Deutsch}e), oder es könnte das \ili{Englisch}e mit Fragebildung (Residual-V2) sein:
 
 \eal
 \ex Wen hat Aicke gesehen bei der Demonstration?
@@ -592,7 +591,7 @@ das \ili{Deutsch}e), oder es könnte das \ili{Englisch}e mit Fragebildung (Resid
 \zl
 
 %\largerpage
-\item Skizzieren Sie die Analyse für die folgenden Beispiele. Verwenden Sie die in diesem Kapitel verwendeten
+\item Skizzieren Sie die Analyse für die folgenden Beispiele. Benutzen Sie die in diesem Kapitel verwendeten
   Abkürzungen; das heißt, gehen Sie nicht auf die Details bezüglich \spr und \compsw ein, sondern verwenden Sie S, VP und V$'$.
 \eal
 \ex
@@ -635,7 +634,7 @@ sm edges
          [PP [an dem Buch,roof]]
          [V//V [\trace]]]]]]
 \end{forest}
-\caption{Analyse von \emph{Arbejder Bjarne ihærdigt på bogen?} `Arbeitet Bjarne ernsthaft an dem Buch?'}
+\caption{Analyse von \emph{Arbeitet Bjarne ernsthaft an dem Buch?}}
 \end{figure}
 
 \begin{figure}
@@ -661,7 +660,7 @@ sm edges
 
 \item Skizzieren Sie die Analyse für die folgenden Beispiele. Verwenden Sie die Valenzmerkmale \spr und \comps
   anstelle der Abkürzungen S, VP und V$'$. Da der Wert von \spr im \ili{Deutsch}en immer die
-  leere Liste ist, dürfen Sie ihn in den deutschen\il{Deutsch} Beispielen weglassen. NPn und PPn können als NP bzw. PP abgekürzt werden.
+  leere Liste ist, dürfen Sie ihn in den deutschen\il{Deutsch} Beispielen weglassen. NPen und PPen können als NP bzw. PP abgekürzt werden.
 \eal
 \ex dass sie darüber nachdenkt
 \ex dass sie darüber nachdenken wird
@@ -799,7 +798,7 @@ sm edges
 \end{figure}
 
 
-\item Skizzieren Sie die Analyse der folgenden Beispiele. NPn dürfen abgekürzt werden. Valenzmerkmale sollen
+\item Skizzieren Sie die Analyse der folgenden Beispiele. NPen dürfen abgekürzt werden. Valenzmerkmale sollen
   nicht angegeben werden, sondern stattdessen Knotenlabels wie V, V$'$, VP und S. Falls nichtlokale
   Abhängigkeiten beteiligt sind, kennzeichnen Sie diese mit dem Symbol `/'.
 \eal
@@ -808,7 +807,7 @@ sm edges
 \ex
 \gll Boger som det elsker jeg.\\
      Bücher wie diese mag ich\\\danish
-\glt `Ich mag solche Bücher.'
+\glt `Solche Bücher mag ich.'
 \zl
 
 \begin{figure}
@@ -859,7 +858,8 @@ sm edges
                [V//V  [\_$_j$] ]
                [NP/NP [\trace$_i$ ] ] ] ] ] ] ] 
 \end{forest}
-\caption{\label{fig-boger-som-et-elsker-jeg}Analyse des dänischen Beispiels \emph{Boger som det elsker jeg.} `Ich mag solche Bücher.'}
+\caption{\label{fig-boger-som-et-elsker-jeg}Analyse des dänischen Beispiels \emph{Boger som det
+    elsker jeg.} `Solche Bücher mag ich.'}
 \end{figure}
 
 \item Skizzieren Sie die Analyse des Beispiels in (\mex{0}b) und nehmen Sie das Merkmal \comps mit auf.
@@ -873,7 +873,7 @@ sm edges
   [S/NP
      [{V[\comps \sliste{ \ibox{1} }]}
         [V [mag$_j$] ] ]
-     [{\ibox{1} S//\vSLASHnp[\comps \sliste{ }]}
+     [{\ibox{1} S//\vSLASHnp[\comps \eliste]}
         [\ibox{3} NP/NP [\trace$_i$] ]
         [{\vbarDSLv[\comps \sliste{ \ibox{3} }]}
            [\ibox{2} NP [ich] ]
@@ -885,12 +885,12 @@ sm edges
 
 \end{enumerate}
 
-\clearpage
+%\clearpage
 
 \section{Passiv}
 
 \begin{enumerate}
-\item Welche NPn in (\mex{1}) haben strukturellen und welche lexikalischen Kasus?
+\item Welche NPen in (\mex{1}) haben strukturellen und welche lexikalischen Kasus?
 \eal
 \ex Der Junge lacht.
 \ex Mich friert.
@@ -950,7 +950,7 @@ sm edges
 \end{forest}
 \caption{Analyse des Passivsatzes \emph{that the box was opened}}
 \end{figure}
-Das transitive Verb \emph{open} nimmt ein Subjekt und ein Objekt. Die \argst-Liste enthält zwei NPn mit
+Das transitive Verb \emph{open} nimmt ein Subjekt und ein Objekt. Die \argst-Liste enthält zwei NPen mit
 strukturellem Kasus. Die Passiv-Lexikonregel entfernt ein Argument. Für das Passivpartizip
 bleibt uns damit ein Element auf der \argstl. Dieses Element wird auf die \sprl von
 \emph{opened} abgebildet. Das Passivhilfsverb nimmt eine VP in Passivform und übernimmt deren Element aus
@@ -1014,7 +1014,7 @@ sm edges
              [{NP[\snom]/NP[\snom]} [\trace] ] ]
            [{NP[\sacc]} [Kim;Kim ] ] ] ] ]
 \end{forest}}
-\caption{Analyse von \emph{hvem det knows Kim} `wer Kim kennt'}
+\caption{Analyse von \emph{hvem det kende Kim} `wer Kim kennt'}
 %\caption{Analysis of interrogative clauses in Danish with subject extraction}\label{fig-interrogative-Danish-subject-extraction}
 \end{figure}
 
