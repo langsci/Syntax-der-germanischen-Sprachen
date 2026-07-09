@@ -41,10 +41,10 @@ Mit den in \citew[Abschnitt~1.3]{MuellerLehrbuch4} eingeführten Konstituentente
 einzelne Wörter ebenso wie die Zeichenketten \emph{das Buch} und \emph{dem Kind}
 Konstituenten bilden. Diesen werden dann bestimmte Symbole zugewiesen. Da Nomen einen wichtigen Teil
 der Phrasen \emph{das Buch} und \emph{dem Kind} bilden, werden diese als \emph{Nominalphrasen} oder
-kurz NPs bezeichnet. Das Pronomen \emph{er} kann an denselben Stellen wie volle NPs auftreten,
+kurz NPen bezeichnet. Das Pronomen \emph{er} kann an denselben Stellen wie volle NPen auftreten,
 weshalb man es ebenfalls der Kategorie NP zuordnet.
 
-Die Gruppierung von Konstituenten kann man sich mithilfe von Schachteln veranschaulichen und darstellen. Zum Beispiel kann \emph{er das
+Die Gruppierung von Konstituenten kann man mithilfe von Schachteln veranschaulichen. Zum Beispiel kann \emph{er das
   Buch dem Kind gibt} wie in Abbildung~\ref{fig-boxes} dargestellt werden.\todostefan{Beispiele aus HPSG-Buch}
 \begin{figure}
 \centering
@@ -106,13 +106,13 @@ mit dem man tatsächlich Strukturen ableiten kann, die sich als solche Schachtel
 Bäume darstellen lassen, wie man sie aus Einführungskursen kennt. Daher werden wir uns jetzt mit
 Phrasenstrukturgrammatiken befassen.
 
-Phrasenstrukturgrammatiken kommen mit Regeln, die festlegen, welche Symbole bestimmten Arten von Wörtern zugewiesen werden und wie diese kombiniert werden, um komplexere
+Phrasenstrukturgrammatiken\is{Phrasenstrukturgrammatik|(} kommen mit Regeln, die festlegen, welche Symbole bestimmten Arten von Wörtern zugewiesen werden und wie diese kombiniert werden, um komplexere
 Einheiten zu bilden. Eine einfache Phrasenstrukturgrammatik, mit der man (\mex{0}) analysieren kann, ist in (\mex{1}) angegeben:\footnote{%
 	Ich ignoriere die Konjunktion \emph{weil} vorerst. Da die genaue Analyse von
         deutschen\il{Deutsch} Verberst- und Verbzweitsätzen eine Reihe zusätzlicher Annahmen erfordert, beschränken wir uns in diesem Kapitel auf Verbletztsätze.
 }$^,$\footnote{\label{fn-np-pron-ps-rule}%
 	Die Regel NP $\to$ er mag merkwürdig erscheinen. Wir könnten stattdessen die Regel PersPron $\to$ er annehmen, müssten dann aber eine weitere Regel postulieren,
-	die festlegt, dass Personalpronomen volle NPs ersetzen können: NP $\to$ PersPron. Die Regel in (\mex{1}) fasst die beiden genannten Regeln zusammen und besagt,
+	die festlegt, dass Personalpronomen volle NPen ersetzen können: NP $\to$ PersPron. Die Regel in (\mex{1}) fasst die beiden genannten Regeln zusammen und besagt,
 	dass \emph{er} an Stellen auftreten kann, an denen Nominalphrasen auftreten können.
 }
 \ea
@@ -203,6 +203,7 @@ sie denselben Mutterknoten haben.\footnote{\emph{Elternknoten}\is{Knoten!Eltern-
   Begriffe. Ich verwende hier \emph{Mutter} und \emph{Tochter}, da diese Terminologie auch in
   Formalisierungen der später entwickelten Theorie verwendet wird.
 }
+Die Knoten, die ganz unten im Baum stehen, werden Blätter\is{Blatt} oder auch Terminalsymbole\is{Terminalsymbol} genannt.
 Wenn ein Knoten zwei Töchter\is{Knoten!Tochter-} hat, dann haben wir eine binär\is{binär} verzweigende Struktur\is{Verzweigung}\is{Verzweigung!binäre}.
 Wenn es genau eine Tochter gibt, dann haben wir eine unär\is{unär}\is{Verzweigung!unäre} verzweigende
 Struktur. Zwei Wörter oder Phrasen heißen \emph{adjazent}\is{Adjazenz},
@@ -265,7 +266,7 @@ sm edges
 \caption{\label{er-das-buch-dem-mann-gibt-bin}Analyse von \emph{er das Buch dem Kind gibt} mit einer
   binär verzweigenden Struktur}
 \end{figure}%
-Da die Regel V $\to$ NP, V rekursiv ist, können beliebig viele NPs mit einem V kombiniert werden. Das Ergebnis
+Da die Regel V $\to$ NP, V rekursiv ist, können beliebig viele NPen mit einem V kombiniert werden. Das Ergebnis
 einer NP-V-Kombination ist ein V, das wiederum als Tochter auf der rechten Seite der Regel verwendet werden kann.
 
 Sowohl die Grammatik in (\mex{0}) als auch die in (\ref{bsp-grammatik-psg}) ist zu ungenau.
@@ -352,8 +353,8 @@ S  & $\to$ NP\_2\_pl\_nom & NP\_dat & NP\_acc & V\_2\_pl\_nom\_dat\_acc\\
 S  & $\to$ NP\_3\_pl\_nom & NP\_dat & NP\_acc & V\_3\_pl\_nom\_dat\_acc\\
 \end{tabular}
 \z
-Da es nötig ist, zwischen Nominalphrasen in vier Kasus zu unterscheiden, haben wir insgesamt sechs Symbole für NPs im Nominativ und drei Symbole für NPs mit
-anderen Kasus. Da Verben zu den NPs passen müssen, das heißt, da wir zwischen Verben, die drei Argumente selegieren, und solchen, die nur eins oder zwei selegieren, unterscheiden müssen (\mex{1}),
+Da es nötig ist, zwischen Nominalphrasen in vier Kasus zu unterscheiden, haben wir insgesamt sechs Symbole für NPen im Nominativ und drei Symbole für NPen mit
+anderen Kasus. Da Verben zu den NPen passen müssen, das heißt, da wir zwischen Verben, die drei Argumente selegieren, und solchen, die nur eins oder zwei selegieren, unterscheiden müssen (\mex{1}),
 müssen wir die Anzahl der Symbole erhöhen, die wir für Verben annehmen.\is{Valenz}
 \eal
 \ex[]{
@@ -419,7 +420,7 @@ NP\_3\_pl\_nom  & $\to$ Det\_neu\_pl\_nom & N\_neu\_pl\_nom \\
 Phrasenstrukturgrammatiken, die nur atomare Symbole verwenden, sind problematisch, da sie bestimmte Generalisierungen nicht erfassen können.
 Wir als Linguist*innen können erkennen, dass NP\_3\_sg\_nom für eine Nominalphrase steht, weil es die Buchstaben NP enthält.
 In formaler Hinsicht ist dieses Symbol jedoch genauso wie jedes andere Symbol in der Grammatik, und wir können die Gemeinsamkeiten
-aller für NPs verwendeten Symbole nicht erfassen. Ferner erfassen unstrukturierte Symbole nicht die Tatsache, dass die Regeln in (\mex{0})
+aller für NPen verwendeten Symbole nicht erfassen. Ferner erfassen unstrukturierte Symbole nicht die Tatsache, dass die Regeln in (\mex{0})
 alle etwas gemeinsam haben. In formaler Hinsicht ist das Einzige, was die Regeln gemeinsam haben, dass es ein Symbol auf der
 linken Seite der Regel und zwei auf der rechten gibt.
 
@@ -471,8 +472,7 @@ S  & $\to$ & NP({Per1},{Num1},{nom}) \\
 \end{tabular}
 \z
 Die Identifikation von Per1 und Num1 am Verb und am Subjekt stellt sicher, dass Subjekt-Verb-Kongruenz vorliegt.
-Für die anderen NPs sind die Werte dieser Merkmale irrelevant. Der Kasus dieser NPs wird explizit festgelegt.
-\is{Phrasenstrukturgrammatik|)}
+Für die anderen NPen sind die Werte dieser Merkmale irrelevant. Der Kasus dieser NPen wird explizit festgelegt.
 
 % \section{Semantics}
 % \label{sec-PSG-Semantik}
@@ -809,11 +809,11 @@ Adjektive eine Konstituente bilden, da wir auch die folgende Art von Nominalphra
 diese schlauen und diese neugierigen Eichhörnchen
 \z
 %%\largerpage
-Hier haben wir es jedoch mit einer anderen Struktur zu tun. Zwei volle NPs wurden
+Hier haben wir es jedoch mit einer anderen Struktur zu tun. Zwei volle NPen wurden
 koordiniert\is{Koordination}, und ein Teil des ersten Konjunkts wurde nicht ausgesprochen.\footnote{
   Man beachte, dass man nicht behaupten kann, dass das zweite Konjunkt in (\ref{ex-alle-grossen-Seeelefanten-und})
   eine volle NP ist und \emph{alle} nur nicht ausgesprochen wird. Wenn der Determinator in deutschen\il{Deutsch}
-  NPs weggelassen wird, brauchen wir eine andere Flexion:
+  NPen weggelassen wird, brauchen wir eine andere Flexion:
 \eal
 \ex[]{
 Alle grauen Eichhörnchen sind groß.
@@ -910,7 +910,7 @@ sm edges
 Zusätzlich zu den zuvor besprochenen NP-Strukturen gibt es weitere Strukturen, in denen der
 Determinator oder das Nomen fehlt.
 Nomen können durch Ellipse weggelassen werden. (\mex{1}) gibt ein Beispiel für Nominalphrasen, in denen ein Nomen, das kein Komplement verlangt,
-weggelassen wurde. Die Beispiele in (\mex{2}) zeigen NPs, in denen nur ein Determinator und ein Komplement des Nomens realisiert wurde,
+weggelassen wurde. Die Beispiele in (\mex{2}) zeigen NPen, in denen nur ein Determinator und ein Komplement des Nomens realisiert wurde,
 aber nicht das Nomen selbst. Der Unterstrich markiert die Position, an der das Nomen normalerweise auftreten würde.
 \eal
 \label{ex-nounless-np}
@@ -1237,7 +1237,7 @@ kann durch den leeren Determinator mit einem entsprechend spezifizierten Bedeutu
 % kind of analysis has also been proposed by some researchers.\todostefan{Martin: obscure} See Chapter~\ref{Abschnitt-Diskussion-leere-Elemente} for
 % more on empty elements.
 
-Anders als determinatorlosen NPs fehlt Präpositionalphrasen ohne Grad- oder Maßangabe
+Anders als determinatorlosen NPen fehlt Präpositionalphrasen ohne Grad- oder Maßangabe
 keine Bedeutungskomponente für die Komposition. Es ist daher nicht nötig, eine leere Maßangabe anzunehmen, die
 irgendwie zur Bedeutung der gesamten PP beiträgt. Daher besagt die Regel in (\ref{Regel-PP-P}), dass eine
 Präpositionalphrase aus \pbar besteht, das heißt aus einer Kombination von P und NP.\is{Präposition|)}
@@ -1254,7 +1254,7 @@ einen Vorschlag einer determinatorlosen Analyse für das Bulgarische und \citet[
 \label{sec-xbar}
 \rohead{\thesection~~$\skoverline{X}$ Theory}
 
-Wenn\is{X theory@\xbar theory|(} wir uns die im vorigen Abschnitt formulierten Regeln noch einmal ansehen, sehen wir, dass Köpfe immer
+Wenn\is{X-Theorie@\xbar-Theorie|(} wir uns die im vorigen Abschnitt formulierten Regeln noch einmal ansehen, sehen wir, dass Köpfe immer
 mit ihren Komplementen zu einer neuen Konstituente kombiniert werden (\mex{1}a,b), die dann mit weiteren Konstituenten kombiniert werden kann (\mex{1}c,d):
 
 \eal
@@ -1266,7 +1266,7 @@ mit ihren Komplementen zu einer neuen Konstituente kombiniert werden (\mex{1}a,b
 \zl
 %
 Grammatiker*innen, die sich mit dem \ili{Englisch}en\il{Englisch} beschäftigt haben, haben festgestellt, dass parallele Strukturen für Phrasen verwendet werden können, die Adjektive oder Verben als Kopf haben.
-Ich bespreche an dieser Stelle Adjektivphrasen und verschiebe die Diskussion der Verbalphrasen auf
+Ich bespreche an dieser Stelle Adjektivphrasen und verschiebe die Diskussion der Verbphrasen auf
 Kapitel~\ref{chap-valence}, da die Annahmen bezüglich der Struktur von Sätzen sowohl im \ili{Deutsch}en
 als auch im \ili{Englisch}en von der \xbart abweichen, wie sie heute üblicherweise angenommen wird. Wie im \ili{Deutsch}en können bestimmte Adjektive
 im \ili{Englisch}en Komplemente nehmen, mit der wichtigen Einschränkung, dass Adjektivphrasen mit Komplementen diese im \ili{Englisch}en nicht prä"=nominal realisieren können.
@@ -1388,13 +1388,13 @@ weiterhin \xbar, das heißt, die Projektionsebene wird durch die Kombination mit
 Maximale Projektionen werden durch zwei
 Striche markiert. Man kann auch XP\is{XP} für eine Projektion von X mit zwei Strichen schreiben.
 Eine XP besteht aus einem Spezifikator\is{Spezifikator} und \xbar. Je nach
-den theoretischen Annahmen sind von einem Verb abhängige Subjekte Spezifikatoren einer Verbalphrase
+den theoretischen Annahmen sind von einem Verb abhängige Subjekte Spezifikatoren einer Verbphrase
 (\citealt*[100--103]{SWB2003a}; \citealt[Abschnitt~3.1]{MOe2011a})
 % Die argumentieren gegen die IP, aber Berman hat VP -> DP, VP und Haider will auch keinen Spec.
 %(\citealp[]{Haider97a};
 % Haider95b-u
 %\citealp[Abschnitt~3.2.2]{Berman2003a}) 
-und Determinatoren sind Spezifikatoren in NPs \citep[\page
+und Determinatoren sind Spezifikatoren in NPen \citep[\page
 210]{Chomsky70a}. Ferner werden auch Gradmodifikatoren \citep[\page
 210]{Chomsky70a} in Adjektivphrasen und Maßangaben in Präpositionalphrasen zu den Spezifikatoren gezählt.
 
@@ -1494,7 +1494,7 @@ Unäre Projektionen sind etwas unelegant, aber das sollte uns hier nicht allzu s
 in der Diskussion der lexikalischen Einträge in (\ref{Lexikon-Projektion}) bereits
 gesehen haben, dass unär verzweigende Knoten größtenteils vermieden werden können und dass es in der Tat wünschenswert ist,
 solche Strukturen zu vermeiden. Andernfalls erhält man unechte Mehrdeutigkeiten\is{Mehrdeutigkeit!unechte}. In den folgenden
-Kapiteln zeige ich, wie die HPSG (light) Determinatoren sowie Nominal-, Adjektiv- und Verbalphrasen analysieren kann, ohne
+Kapiteln zeige ich, wie die HPSG (light) Determinatoren sowie Nominal-, Adjektiv- und Verbphrasen analysieren kann, ohne
 unäre Regeln anzunehmen. Statt also die Strukturen in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris} anzunehmen,
 werden die viel einfacheren in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris-HPSG} verwendet.
 \begin{figure}%[p]
@@ -1532,7 +1532,8 @@ sm edges
 % to be maximal projections\is{projection!maximal} will be disregarded. \citet{Pullum85a} and
 % \citet{KP90a} have shown that the respective theories are not necessarily less restrictive
 % than theories which adopt a strict version of the \xbar theory. See also the discussion in \citew[Abschnitt~13.1.2]{MuellerGT-Eng5}.
-\is{X theory@\xbar theory|)}
+\is{X-Theorie@\xbar-Theorie|)}
+\is{Phrasenstrukturgrammatik|)}
 %\ohead{\headmark}
 
 %\clearpage  
@@ -1570,7 +1571,7 @@ zusätzlich das Grammatiktheorie"=Lehrbuch konsultieren. Es ist ebenfalls bei La
 heißt, es ist frei verfügbar.
 \begin{enumerate}
 \item\label{exercise-NP-PSG}
-Zeichnen Sie Bäume für die folgenden Phrasen. Sie dürfen das Symbol NP für Eigennamen und \nbar für
+Zeichnen Sie Bäume für die folgenden Phrasen. Verwenden Sie das Symbol NP für Eigennamen und \nbar für
   Nomen, die keine Komplemente verlangen, verwenden (wie in Abbildung~\ref{Abb-das-schoene-Bild-von-Paris-HPSG}).
 \eal
 \ex
